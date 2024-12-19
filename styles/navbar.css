@@ -1,0 +1,168 @@
+/* Navbar Base */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(18, 18, 18, 0.5); /* Dark mode default */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Navbar on Scroll */
+.navbar.scrolled {
+    background: rgba(9, 9, 9, 0.8);
+}
+
+/* Dark Mode (Default) */
+.navbar .logo,
+.navbar .nav-links li a {
+    color: var(--text-primary-dark); /* White text */
+}
+
+.menu-toggle span {
+    background: var(--text-primary-dark); /* White lines for toggle */
+}
+
+/* Light Mode */
+@media (prefers-color-scheme: light) {
+    .navbar {
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar.scrolled {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .navbar .logo,
+    .navbar .nav-links li a {
+        color: var(--text-primary); /* Black text */
+    }
+
+    .navbar .nav-links li a:hover {
+        color: var(--accent-color);
+        border-color: var(--accent-color);
+        box-shadow: 0 0 10px rgba(79, 172, 254, 0.4);
+    }
+
+    .menu-toggle span {
+        background: var(--text-primary); /* Black lines in light mode */
+    }
+}
+
+/* Navbar Container */
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.navbar .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar .logo:hover {
+    color: var(--accent-color);
+}
+
+/* Navigation Links */
+.navbar .nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+.navbar .nav-links li a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-links li a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(79, 172, 254, 0.6);
+}
+
+/* Mobile View Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 2px;
+    margin: 3px 0;
+    transition: transform 0.3s ease;
+}
+
+/* Mobile Responsive Styling */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links ul {
+        display: none;
+        flex-direction: column;
+        background: rgba(18, 18, 18, 0.95);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links ul.show {
+        display: flex;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Back Button Styling */
+.logo-container .back-btn {
+    margin-right: 20px;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-container .back-btn:hover {
+    background: var(--accent-color);
+    color: var(--btn-hover-text-dark);
+    box-shadow: 0 0 8px rgba(79, 172, 254, 0.6);
+}

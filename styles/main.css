@@ -1,0 +1,151 @@
+:root {
+    /* Light Mode Colours */
+    --bg-primary: #ffffff;
+    --text-primary: #121212;
+    --card-bg-light: rgba(0, 0, 0, 0.05);
+    --overlay-light: rgba(255, 255, 255, 0.1);
+
+    /* Dark Mode Colours */
+    --bg-primary-dark: #121212;
+    --text-primary-dark: #ffffff;
+    --card-bg-dark: rgba(255, 255, 255, 0.05);
+    --overlay-dark: rgba(0, 0, 0, 0.3);
+
+    /* Accent Colour */
+    --accent-color: #4facfe;
+
+    /* Secondary Backgrounds */
+    --bg-secondary-dark: rgba(255, 255, 255, 0.05); 
+    --bg-secondary-light: rgba(0, 0, 0, 0.05);
+
+    /* Button Colours */
+    --btn-border-dark: #ffffff;
+    --btn-text-dark: #ffffff;
+    --btn-hover-bg-dark: #ffffff;
+    --btn-hover-text-dark: #121212;
+
+    --btn-border-light: #121212;
+    --btn-text-light: #121212;
+    --btn-hover-bg-light: #121212;
+    --btn-hover-text-light: #ffffff;
+}
+
+/* Use .secondary for card-like backgrounds (e.g., skill-card, project-card) */
+.secondary {
+    background-color: var(--bg-secondary-dark);
+    transition: background-color 0.3s ease;
+}
+
+@media (prefers-color-scheme: light) {
+    .secondary {
+        background-color: var(--bg-secondary-light);
+    }
+}
+
+/* Existing resets and typography */
+body {
+    background-color: var(--bg-primary-dark);
+    color: var(--text-primary-dark);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3 {
+    color: var(--text-primary-dark);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+p {
+    color: var(--text-primary-dark);
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--btn-hover-bg-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cards should use .secondary for a distinct background */
+.card {
+    background: var(--card-bg-dark);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--overlay-dark);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: 2px solid var(--btn-border-dark); /* use a fixed variable here */
+    color: var(--btn-text-dark);
+    background: transparent;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--btn-hover-bg-dark);
+    color: var(--btn-hover-text-dark);
+    /* Notice we do not change the border, so it remains constant */
+}
+
+@media (prefers-color-scheme: light) {
+    .btn {
+        border-color: var(--btn-border-light);
+        color: var(--btn-text-light);
+    }
+
+    .btn:hover {
+        background: var(--btn-hover-bg-light);
+        color: var(--btn-hover-text-light);
+        /* The border still isn't changed here, so it stays stable */
+    }
+}
+
+
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+
+    h1, h2, h3, p {
+        color: var(--text-primary);
+    }
+
+    a {
+        color: var(--accent-color);
+    }
+
+    .card {
+        background: var(--card-bg-light);
+        box-shadow: 0 4px 6px var(--overlay-light);
+    }
+
+    .btn {
+        border-color: var(--btn-border-light);
+        color: var(--btn-text-light);
+    }
+
+    .btn:hover {
+        background: var(--btn-hover-bg-light);
+        color: var(--btn-hover-text-light);
+    }
+}

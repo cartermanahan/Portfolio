@@ -92,7 +92,7 @@ a:hover {
     display: inline-block;
     padding: 10px 20px;
     font-weight: bold;
-    border: 2px solid var(--btn-border-dark); /* use a fixed variable here */
+    border: 2px solid var(--btn-border-dark); /* Use a fixed variable */
     color: var(--btn-text-dark);
     background: transparent;
     border-radius: 5px;
@@ -102,22 +102,8 @@ a:hover {
 .btn:hover {
     background: var(--btn-hover-bg-dark);
     color: var(--btn-hover-text-dark);
-    /* Notice we do not change the border, so it remains constant */
+    /* Notice we do not modify the border here, so it remains unchanged */
 }
-
-@media (prefers-color-scheme: light) {
-    .btn {
-        border-color: var(--btn-border-light);
-        color: var(--btn-text-light);
-    }
-
-    .btn:hover {
-        background: var(--btn-hover-bg-light);
-        color: var(--btn-hover-text-light);
-        /* The border still isn't changed here, so it stays stable */
-    }
-}
-
 
 
 @media (prefers-color-scheme: light) {

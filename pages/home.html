@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="../styles/main.css">
         <link rel="stylesheet" href="../styles/home.css">
         <link rel="stylesheet" href="../styles/navbar.css">
-        <link rel="icon" type="image/png" href="../images/Carter/Carter3.png">
+        <link rel="icon" type="image/png" href="../images/Icons/github.png">
         <script src="../scripts/navbar.js" defer></script>
     </head>
     
@@ -388,34 +388,17 @@
 </footer>
 
 <script>
-    // Mobile nav
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.querySelector('.nav-links ul');
-
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navLinks.classList.toggle('show');
-        });
-
-        document.addEventListener('click', (e) => {
-            const isClickInsideMenu = navLinks.contains(e.target) || menuToggle.contains(e.target);
-            if (!isClickInsideMenu) {
-                navLinks.classList.remove('show');
+    // Smooth Scroll for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', e => {
+            const href = link.getAttribute('href');
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-                navLinks.classList.remove('show');
-            });
-        });
-    }
+    });
 
     // Scroll-on-appear animations (run once)
     document.addEventListener('DOMContentLoaded', () => {

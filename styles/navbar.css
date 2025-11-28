@@ -215,3 +215,15 @@
         }
     }
 }
+/* Force correct hamburger colour */
+@media (prefers-color-scheme: light) {
+    .menu-toggle span {
+        background: #000000 !important; /* pure black in light mode */
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .menu-toggle span {
+        background: #ffffff !important; /* pure white in dark mode */
+    }
+}

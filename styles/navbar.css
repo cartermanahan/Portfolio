@@ -1,168 +1,192 @@
-/* Navbar Base */
+/*------------------------------------
+  NAVBAR — Clean Apple Style
+------------------------------------*/
+
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(18, 18, 18, 0.5); /* Dark mode default */
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    transition: background 0.3s ease-in-out, box-shadow 0.3s ease;
-    animation: fadeIn 1.5s ease-in-out;
+    background: rgba(18, 18, 18, 0.55); /* default dark mode */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 10px 22px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03);
+    transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Navbar on Scroll */
-.navbar.scrolled {
-    background: rgba(9, 9, 9, 0.8);
-}
-
-/* Dark Mode (Default) */
-.navbar .logo,
-.navbar .nav-links li a {
-    color: var(--text-primary-dark); /* White text */
-}
-
-.menu-toggle span {
-    background: var(--text-primary-dark); /* White lines for toggle */
-}
-
-/* Light Mode */
-@media (prefers-color-scheme: light) {
-    .navbar {
-        background: rgba(255, 255, 255, 0.5);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-
-    .navbar.scrolled {
-        background: rgba(255, 255, 255, 0.9);
-    }
-
-    .navbar .logo,
-    .navbar .nav-links li a {
-        color: var(--text-primary); /* Black text */
-    }
-
-    .navbar .nav-links li a:hover {
-        color: var(--accent-color);
-        border-color: var(--accent-color);
-        box-shadow: 0 0 10px rgba(79, 172, 254, 0.4);
-    }
-
-    .menu-toggle span {
-        background: var(--text-primary); /* Black lines in light mode */
-    }
-}
-
-/* Navbar Container */
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1120px;
     margin: 0 auto;
 }
 
-/* Logo */
+/*------------------------------------
+  LOGO
+------------------------------------*/
+
 .navbar .logo {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: none;          /* no uppercase */
+    color: var(--text-primary-dark); /* white */
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: opacity 0.25s ease;
+    opacity: 0.92;
 }
 
 .navbar .logo:hover {
-    color: var(--accent-color);
+    opacity: 1;
 }
 
-/* Navigation Links */
+/*------------------------------------
+  NAV LINKS (Desktop)
+------------------------------------*/
+
 .navbar .nav-links ul {
     display: flex;
+    align-items: center;
+    gap: 10px;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 20px;
 }
 
 .navbar .nav-links li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 14px;
     font-size: 0.9rem;
     font-weight: 500;
-    text-decoration: none;
-    padding: 8px 15px;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+    text-transform: none;         /* no caps */
+    opacity: 0.9;
+
+    color: var(--text-primary-dark);
+    border-radius: 999px;         /* pills */
+    border: 1px solid transparent;
+    background: transparent;
+
+    transition:
+        opacity 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.15s ease;
 }
 
+/* Hover — clean, subtle */
 .navbar .nav-links li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.18);
+    opacity: 1;
     color: var(--accent-color);
-    border-color: var(--accent-color);
-    box-shadow: 0 0 10px rgba(79, 172, 254, 0.6);
+    transform: translateY(-1px);
+    box-shadow: none;
 }
 
-/* Mobile View Toggle */
+/*------------------------------------
+  LIGHT MODE OVERRIDE
+------------------------------------*/
+
+@media (prefers-color-scheme: light) {
+    .navbar {
+        background: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar .logo {
+        color: var(--text-primary);
+        opacity: 0.95;
+    }
+
+    .navbar .nav-links li a {
+        color: var(--text-primary);
+        opacity: 0.9;
+    }
+
+    .navbar .nav-links li a:hover {
+        background: rgba(0, 0, 0, 0.06);
+        border-color: rgba(0, 0, 0, 0.12);
+        color: var(--accent-color);
+        opacity: 1;
+    }
+}
+
+/*------------------------------------
+  MOBILE MENU
+------------------------------------*/
+
 .menu-toggle {
     display: none;
     flex-direction: column;
-    justify-content: center;
+    gap: 4px;
     cursor: pointer;
 }
 
 .menu-toggle span {
-    width: 25px;
+    width: 22px;
     height: 2px;
-    margin: 3px 0;
-    transition: transform 0.3s ease;
+    background: var(--text-primary-dark);
+    border-radius: 999px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* Mobile Responsive Styling */
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/*------------------------------------
+  MOBILE NAV LAYOUT
+------------------------------------*/
+
 @media screen and (max-width: 768px) {
     .menu-toggle {
         display: flex;
     }
 
-    .nav-links ul {
+    .navbar .nav-links ul {
         display: none;
         flex-direction: column;
-        background: rgba(18, 18, 18, 0.95);
+        align-items: flex-start;
+        padding: 14px;
+        gap: 10px;
+
         position: absolute;
-        top: 60px;
         right: 20px;
-        padding: 15px;
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        top: 60px;
+        min-width: 180px;
+
+        background: rgba(10, 10, 10, 0.96);
+        backdrop-filter: blur(18px);
+        border-radius: 14px;
     }
 
-    .nav-links ul.show {
+    .navbar .nav-links ul.show {
         display: flex;
     }
-}
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
+    .navbar .nav-links li a {
+        width: 100%;
+        padding: 8px 14px;
+        border-radius: 10px;
         opacity: 1;
-        transform: translateY(0);
     }
-}
 
-/* Back Button Styling */
-.logo-container .back-btn {
-    margin-right: 20px;
-    color: var(--accent-color);
-    border: 2px solid var(--accent-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.logo-container .back-btn:hover {
-    background: var(--accent-color);
-    color: var(--btn-hover-text-dark);
-    box-shadow: 0 0 8px rgba(79, 172, 254, 0.6);
+    @media (prefers-color-scheme: light) {
+        .navbar .nav-links ul {
+            background: rgba(255, 255, 255, 0.98);
+        }
+    }
 }

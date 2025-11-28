@@ -135,3 +135,13 @@ a:hover {
         color: var(--btn-hover-text-light);
     }
 }
+
+/* Prevent mobile overflow causing right-side spacing */
+html, body {
+    overflow-x: hidden !important;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}

@@ -7,7 +7,7 @@
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(18, 18, 18, 0.55); /* default dark mode */
+    background: rgba(18, 18, 18, 0.55); /* Dark mode default */
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     padding: 10px 22px;
@@ -27,12 +27,17 @@
   LOGO
 ------------------------------------*/
 
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
 .navbar .logo {
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.02em;
-    text-transform: none;          /* no uppercase */
-    color: var(--text-primary-dark); /* white */
+    text-transform: none;
+    color: var(--text-primary-dark);
     text-decoration: none;
     transition: opacity 0.25s ease;
     opacity: 0.92;
@@ -59,19 +64,16 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     padding: 6px 14px;
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.02em;
-    text-transform: none;         /* no caps */
     opacity: 0.9;
-
+    text-transform: none;
     color: var(--text-primary-dark);
-    border-radius: 999px;         /* pills */
+    border-radius: 999px;
     border: 1px solid transparent;
     background: transparent;
-
     transition:
         opacity 0.25s ease,
         background 0.25s ease,
@@ -80,18 +82,16 @@
         transform 0.15s ease;
 }
 
-/* Hover — clean, subtle */
 .navbar .nav-links li a:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.18);
     opacity: 1;
     color: var(--accent-color);
     transform: translateY(-1px);
-    box-shadow: none;
 }
 
 /*------------------------------------
-  LIGHT MODE OVERRIDE
+  LIGHT MODE OVERRIDES
 ------------------------------------*/
 
 @media (prefers-color-scheme: light) {
@@ -114,12 +114,15 @@
         background: rgba(0, 0, 0, 0.06);
         border-color: rgba(0, 0, 0, 0.12);
         color: var(--accent-color);
-        opacity: 1;
+    }
+
+    .menu-toggle span {
+        background: var(--text-primary);
     }
 }
 
 /*------------------------------------
-  MOBILE MENU
+  MOBILE MENU TOGGLE
 ------------------------------------*/
 
 .menu-toggle {
@@ -148,25 +151,47 @@
 }
 
 /*------------------------------------
-  MOBILE NAV LAYOUT
+  FINAL – MOBILE LAYOUT (clean + centred)
 ------------------------------------*/
 
-@media screen and (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
+@media (max-width: 768px) {
+
+    /* Even padding across the whole navbar */
+    .navbar {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
     }
 
+    /* Proper container alignment */
+    .navbar .container {
+        padding: 0 !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    /* Logo pulled inward slightly */
+    .logo-container {
+        margin-left: 4px !important;
+    }
+
+    /* Burger pulled inward so it doesn’t hit the right edge */
+    .menu-toggle {
+        display: flex;
+        margin-right: 10px !important;
+    }
+
+    /* Mobile nav dropdown */
     .navbar .nav-links ul {
         display: none;
         flex-direction: column;
         align-items: flex-start;
-        padding: 14px;
         gap: 10px;
+        padding: 14px;
+        min-width: 180px;
 
         position: absolute;
-        right: 20px;
+        right: 18px;
         top: 60px;
-        min-width: 180px;
 
         background: rgba(10, 10, 10, 0.96);
         backdrop-filter: blur(18px);

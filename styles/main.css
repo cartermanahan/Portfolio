@@ -30,6 +30,18 @@
     --btn-hover-text-light: #ffffff;
 }
 
+/* Global scale – makes the entire site appear ~10% zoomed out */
+html {
+    font-size: 90%;
+}
+
+/* Keep accessibility sane — bump back up on very small devices */
+@media (max-width: 480px) {
+    html {
+        font-size: 100%;
+    }
+}
+
 /* Use .secondary for card-like backgrounds (e.g., skill-card, project-card) */
 .secondary {
     background-color: var(--bg-secondary-dark);
@@ -144,4 +156,30 @@ html, body {
 
 * {
     box-sizing: border-box;
+}
+
+/* ----- Compact global vertical spacing ----- */
+.about-section,
+.projects-section,
+.current-work-section,
+.experience-section,
+.skills-section,
+.contact-section {
+    padding-top: 48px !important;
+    padding-bottom: 60px !important;
+}
+
+/* Section titles closer to content */
+.section-title {
+    margin-bottom: 26px !important;
+}
+
+/* Intro paragraphs tighter */
+.about-intro,
+.projects-intro,
+.current-work-intro,
+.experience-intro,
+.contact-intro,
+.skills-intro {
+    margin-bottom: 24px !important;
 }

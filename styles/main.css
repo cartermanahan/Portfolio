@@ -6,10 +6,10 @@
     --overlay-light: rgba(255, 255, 255, 0.1);
 
     /* Dark Mode Colours */
-    --bg-primary-dark: #121212;
+--bg-primary-dark: #03070C;
     --text-primary-dark: #ffffff;
     --card-bg-dark: rgba(255, 255, 255, 0.05);
-    --overlay-dark: rgba(0, 0, 0, 0.3);
+    --overlay-dark: rgba(0, 0, 0, 0.35);
 
     /* Accent Colour */
     --accent-color: #4facfe;
@@ -158,28 +158,3 @@ html, body {
     box-sizing: border-box;
 }
 
-/* ----- Compact global vertical spacing ----- */
-.about-section,
-.projects-section,
-.current-work-section,
-.experience-section,
-.skills-section,
-.contact-section {
-    padding-top: 48px !important;
-    padding-bottom: 60px !important;
-}
-
-/* Section titles closer to content */
-.section-title {
-    margin-bottom: 26px !important;
-}
-
-/* Intro paragraphs tighter */
-.about-intro,
-.projects-intro,
-.current-work-intro,
-.experience-intro,
-.contact-intro,
-.skills-intro {
-    margin-bottom: 24px !important;
-}

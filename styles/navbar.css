@@ -198,16 +198,30 @@
         border-radius: 14px;
     }
 
-    .navbar .nav-links ul.show {
-        display: flex;
-    }
+ .navbar .nav-links ul.show {
+    display: flex;
+    animation: navDropdownFade 0.28s ease-out forwards;
+}
 
-    .navbar .nav-links li a {
-        width: 100%;
-        padding: 8px 14px;
-        border-radius: 10px;
-        opacity: 1;
-    }
+.navbar .nav-links li {
+    opacity: 0;
+    animation: navLinkFade 0.3s ease-out forwards;
+}
+
+/* Stagger timing */
+.navbar .nav-links li:nth-child(1) { animation-delay: 0.05s; }
+.navbar .nav-links li:nth-child(2) { animation-delay: 0.10s; }
+.navbar .nav-links li:nth-child(3) { animation-delay: 0.15s; }
+.navbar .nav-links li:nth-child(4) { animation-delay: 0.20s; }
+.navbar .nav-links li:nth-child(5) { animation-delay: 0.25s; }
+.navbar .nav-links li:nth-child(6) { animation-delay: 0.30s; }
+
+.navbar .nav-links li a {
+    width: 100%;
+    padding: 8px 14px;
+    border-radius: 999px !important;  /* keep pill shape */
+    opacity: 1;
+}
 
     @media (prefers-color-scheme: light) {
         .navbar .nav-links ul {
@@ -256,4 +270,27 @@
         color: #ffffff;
         border-color: #000000;
     }
+}
+
+/* Keyframes for dropdown */
+@keyframes navDropdownFade {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Keyframes for staggered links */
+@keyframes navLinkFade {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Exit animation */
+@keyframes navDropdownFadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-8px); }
+}
+
+/* Apply when closing */
+.navbar .nav-links ul.closing {
+    animation: navDropdownFadeOut 0.22s ease-in forwards;
 }

@@ -125,6 +125,15 @@
     margin-top: 24px;
 }
 
+/* Let hero buttons wrap, but keep each button on one line */
+.hero-buttons {
+    flex-wrap: wrap;
+}
+
+.hero-buttons .hero-btn {
+    white-space: nowrap;     /* keeps each button on one line */
+}
+
 /* Base hero button styles */
 .hero .hero-btn {
     background: rgba(0, 0, 0, 0.25);
@@ -147,6 +156,13 @@
 }
 .hero .hero-btn:hover {
     background-color: rgba(255, 255, 255, 0.12);
+}
+@media (prefers-color-scheme: dark) {
+    .hero .hero-btn:hover {
+        color: #ffffff !important;   /* stays white */
+        background-color: rgba(255, 255, 255, 0.12) !important;
+        border-color: rgba(255, 255, 255, 0.9) !important;
+    }
 }
 /* Fade-in keyframe */
 @keyframes fadeIn {
@@ -412,6 +428,32 @@
 @media (max-width: 768px) {
     .skills-section {
         padding: 0 18px 60px;
+    }
+}
+
+
+
+/* MOBILE ONLY: turn skills into horizontal scroll */
+@media (max-width: 768px) {
+    .skills-scroll {
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-left: 16px;
+        padding-right: 16px;
+        scrollbar-width: none;
+    }
+    .skills-scroll::-webkit-scrollbar { display: none; }
+
+    .skills-grid {
+        display: inline-flex;
+        gap: 16px;
+    }
+
+    .skill-card {
+        flex: 0 0 calc(100vw - 48px); /* viewport width minus padding */
+        max-width: 320px;              /* optional safety cap */
+        white-space: normal;
     }
 }
 
@@ -1356,19 +1398,22 @@ button.btn:hover,
     border-radius: 18px;
     object-fit: cover;
 }
-
+/* FORCE single-column About cards on mobile */
 @media (max-width: 900px) {
     .about-card,
-    .about-card-alt {
-        grid-template-columns: minmax(0, 1fr);
+    .about-card-alt,
+    .about-card-full {
+        display: block !important;      /* kills the grid entirely */
+        padding-left: 14px !important;  /* tighter horizontal */
+        padding-right: 14px !important;
+        padding-top: 22px !important;
+        padding-bottom: 22px !important;
     }
 
     .about-image {
-        margin-top: 8px;
-        justify-content: flex-start;
+        margin-top: 14px !important;    /* ensures image sits below */
     }
 }
-
 /*------------------------------------
   Contact Section – Glass Form
 ------------------------------------*/

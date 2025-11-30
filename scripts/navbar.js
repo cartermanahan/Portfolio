@@ -7,13 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a');
 
     /*-----------------------------
+      Helper: Smooth Closing Animation
+    -----------------------------*/
+    function closeMenu() {
+        if (!navList.classList.contains('show')) return; // already closed
+
+        navList.classList.remove('show');   // remove open state
+        navList.classList.add('closing');   // trigger closing animation
+
+        // After animation ends, remove "closing"
+        setTimeout(() => {
+            navList.classList.remove('closing');
+        }, 220); // matches CSS animation duration
+    }
+
+    /*-----------------------------
       Smooth Scroll for Nav Links
     -----------------------------*/
     navLinks.forEach(link => {
         link.addEventListener('click', e => {
             const href = link.getAttribute('href');
 
-            // Only handle in-page anchors
+            // Only handle internal anchors
             if (href && href.startsWith('#')) {
                 e.preventDefault();
                 const target = document.querySelector(href);
@@ -22,13 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // Close mobile menu after click
-            if (navList) {
-                navList.classList.remove('show');
-            }
-            if (menuToggle) {
-                menuToggle.classList.remove('open');
-            }
+            // Close menu on link click
+            closeMenu();
+            menuToggle.classList.remove('open');
         });
     });
 
@@ -54,17 +65,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && navList) {
         menuToggle.addEventListener('click', e => {
             e.stopPropagation();
-            navList.classList.toggle('show');
-            menuToggle.classList.toggle('open');
+
+            // Opening
+            if (!navList.classList.contains('show')) {
+                navList.classList.remove('closing');
+                navList.classList.add('show');
+                menuToggle.classList.add('open');
+            }
+            // Closing
+            else {
+                closeMenu();
+                menuToggle.classList.remove('open');
+            }
         });
 
-        // Close when clicking outside
+        // Click outside closes the menu
         document.addEventListener('click', e => {
             const clickInsideMenu = navList.contains(e.target);
             const clickOnToggle = menuToggle.contains(e.target);
 
             if (!clickInsideMenu && !clickOnToggle) {
-                navList.classList.remove('show');
+                closeMenu();
                 menuToggle.classList.remove('open');
             }
         });

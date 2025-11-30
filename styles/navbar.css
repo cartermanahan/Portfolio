@@ -227,3 +227,33 @@
         background: #ffffff !important; /* pure white in dark mode */
     }
 }
+/* Distinct Services CTA */
+.navbar .nav-links li a.nav-cta {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+    opacity: 1;
+}
+
+/* Hover – stronger CTA */
+.navbar .nav-links li a.nav-cta:hover {
+    background: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Light mode variant */
+@media (prefers-color-scheme: light) {
+    .navbar .nav-links li a.nav-cta {
+        border-color: rgba(0, 0, 0, 0.35);
+        background: rgba(0, 0, 0, 0.03);
+        color: #000000;
+    }
+
+    .navbar .nav-links li a.nav-cta:hover {
+        background: #000000;
+        color: #ffffff;
+        border-color: #000000;
+    }
+}

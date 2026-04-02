@@ -3,20 +3,21 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Carter Manahan - iOS Developer and UX/UI Designer. Explore projects, skills, and contact details.">
-        <meta name="keywords" content="iOS Developer, UX/UI Designer, Web Development, Productivity Apps, Portfolio">
-        <title>Carter Manahan Portfolio</title>
+        <meta name="description" content="Carter Manahan. iOS Developer, Product Designer, Founder. Creator of Goalsreach and BrandFounder.">
+        <meta name="keywords" content="iOS Developer, Product Designer, Founder, Goalsreach, BrandFounder, Swift, SwiftUI">
+        <title>Carter Manahan</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../styles/main.css">
         <link rel="stylesheet" href="../styles/home.css">
         <link rel="stylesheet" href="../styles/navbar.css">
-        <link rel="icon" type="image/png" href="../images/Icons/github.png">
+        <link rel="icon" type="image/png" href="../images/cmlogo.png">
         <script src="../scripts/navbar.js" defer></script>
     </head>
-    
+
 <body>
+
 <!-- Navbar -->
 <header class="navbar">
     <div class="container">
@@ -26,11 +27,11 @@
         <nav class="nav-links">
             <ul>
                 <li><a href="services.html" class="nav-cta">Services</a></li>
-
+                <li><a href="#products">Products</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#about">About Me</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -43,20 +44,106 @@
 </header>
 
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero-section">
+    <!-- Three.js canvas injected here by home.js -->
+    <div class="hero-glow-mid"></div>
+    <div class="hero-glow-bottom"></div>
     <div class="hero-content">
-        <div class="profile-image">
-            <img src="../images/Carter/Carter2.png" alt="Carter Manahan">
+        <div class="hero-avatar">
+            <img src="../images/carter_photos/Carter2.png" alt="Carter Manahan">
         </div>
-        <div class="hero-title">
-            <h1><span class="highlight">Carter Manahan</span></h1>
-            <h2 class="tagline">iOS Developer | UX/UI Designer</h2>
+        <h1 class="hero-name">Carter Manahan</h1>
+        <p class="hero-tagline"><span id="typewriter" class="typewriter-cursor"></span></p>
+        <p class="hero-sub">Building digital tools I wish I had at 18. Shipping them now.</p>
+        <div class="hero-products">
+            <a href="https://goalsreach.co.uk" target="_blank" rel="noopener" class="hero-product-pill">
+                <img src="../images/goalsreach/goalsreach-logo-white.png" alt="Goalsreach icon">
+                <span class="pill-text">
+                    <span class="pill-name">Goalsreach</span>
+                    <span class="pill-desc">Goals, streaks, momentum</span>
+                </span>
+            </a>
+            <a href="https://brandfounder.ai" target="_blank" rel="noopener" class="hero-product-pill">
+                <img src="../images/brandfounder/brandfounder-logo-white.png" alt="BrandFounder icon">
+                <span class="pill-text">
+                    <span class="pill-name">BrandFounder</span>
+                    <span class="pill-desc">Brand direction in minutes</span>
+                </span>
+            </a>
         </div>
-        <div class="hero-buttons">
-            <a href="#projects" class="btn hero-btn">Explore My Work</a>
-            <a href="../Resume.pdf" target="_blank" class="btn hero-btn">CV</a>
-            <a href="services.html" class="btn hero-btn">Services</a>
+        <div class="hero-services-row">
+            <a href="services.html" class="hero-product-pill hero-services-pill">
+                <span class="pill-text">
+                    <span class="pill-name">Services</span>
+                    <span class="pill-desc">iOS apps, brand, websites</span>
+                </span>
+            </a>
         </div>
+    </div>
+    <a href="#products" class="hero-scroll-indicator" aria-label="Scroll to products">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+        </svg>
+    </a>
+</section>
+
+<!-- Products Dashboard -->
+<section id="products" class="products-section">
+    <div class="products-header reveal">
+        <h2 class="section-title">What I'm building.</h2>
+        <p class="products-sub">Not concepts. Shipped products.</p>
+    </div>
+    <div class="products-grid">
+
+        <!-- Goalsreach -->
+        <article class="product-card reveal">
+            <div class="product-icon-row">
+                <div class="product-icon-wrap">
+                    <img src="../images/goalsreach/goalsreach-logo-white.png" alt="Goalsreach">
+                </div>
+                <div class="product-status-pill">
+                    <span class="dot"></span>
+                    <span>Live · iOS</span>
+                </div>
+                <div class="product-card-visual">
+                    <img src="../images/goalsreach/goalsreach_appicon_mockup.png" alt="Goalsreach app icon">
+                </div>
+            </div>
+            <h3 class="product-name">Goalsreach</h3>
+            <p class="product-tagline">The accountability system I needed at 18.</p>
+            <p class="product-copy">Goals, streaks, and momentum in one place. Built because every other productivity app either overwhelmed you or let you off the hook. Goalsreach rewards consistency over impulse and makes progress feel real.</p>
+            <p class="product-copy">Designed and shipped end to end in Swift and SwiftUI. Live on the App Store. Used by people genuinely trying to get their lives sorted.</p>
+            <div class="product-links">
+                <a href="https://goalsreach.co.uk" target="_blank" rel="noopener" class="btn product-btn">Website</a>
+                <a href="https://apps.apple.com/ie/app/goalsreach/id6479711415" target="_blank" rel="noopener" class="btn product-btn">App Store</a>
+            </div>
+        </article>
+
+        <!-- BrandFounder -->
+        <article class="product-card reveal">
+            <div class="product-icon-row">
+                <div class="product-icon-wrap">
+                    <img src="../images/brandfounder/brandfounder-logo-white.png" alt="BrandFounder">
+                </div>
+                <div class="product-status-pill">
+                    <span class="dot"></span>
+                    <span>Live · iOS</span>
+                </div>
+                <div class="product-card-visual">
+                    <img src="../images/brandfounder/brandfounder-app-icon-mockup.png" alt="BrandFounder app icon">
+                </div>
+            </div>
+            <h3 class="product-name">BrandFounder</h3>
+            <p class="product-tagline">You have an idea. Now you have a brand.</p>
+            <p class="product-copy">Early founders waste months stuck between idea and launch. BrandFounder cuts through it. Identity, messaging, and product direction generated into something you can actually move with.</p>
+            <p class="product-copy">Built in SwiftUI with OpenAI integration. Clean flows, honest output. No vague AI brainstorm dumped in your lap.</p>
+            <div class="product-links">
+                <a href="https://brandfounder.ai" target="_blank" rel="noopener" class="btn product-btn">Visit BrandFounder</a>
+                <a href="https://apps.apple.com/gb/app/brandfounder/id6759218062" target="_blank" rel="noopener" class="btn product-btn">App Store</a>
+            </div>
+        </article>
+
     </div>
 </section>
 
@@ -64,23 +151,21 @@
 <section id="skills" class="skills-section reveal">
     <h2 class="skills-title section-title">Skills</h2>
     <p class="skills-intro">
-        The work sits across product, engineering, and communication – building things that feel considered
-        end-to-end rather than stitched together.
+        The work sits across product, engineering, and communication. Building things that feel considered
+        end to end rather than stitched together.
     </p>
 
     <div class="skills-scroll">
-
     <div class="skills-grid">
+
         <!-- iOS Development -->
-        <article class="skill-card reveal">
+        <article class="skill-card skill-card--lead reveal">
             <div class="skill-pill">
                 <span class="dot"></span>
                 <span>Core Craft</span>
             </div>
             <h3>iOS Development</h3>
-            <p>
-                Building Swift / SwiftUI apps that are stable, quick to navigate, and honest about what they do.
-            </p>
+            <p>Building Swift / SwiftUI apps that are stable, quick to navigate, and honest about what they do.</p>
             <ul class="skill-tags">
                 <li>Swift / SwiftUI</li>
                 <li>Xcode</li>
@@ -89,15 +174,13 @@
         </article>
 
         <!-- UI/UX Design -->
-        <article class="skill-card reveal">
+        <article class="skill-card skill-card--lead reveal">
             <div class="skill-pill">
                 <span class="dot"></span>
                 <span>Product Design</span>
             </div>
             <h3>UI / UX</h3>
-            <p>
-                Turning fuzzy ideas into clear flows, prototypes, and interfaces people can move through instinctively.
-            </p>
+            <p>Turning fuzzy ideas into clear flows, prototypes, and interfaces people can move through instinctively.</p>
             <ul class="skill-tags">
                 <li>Figma</li>
                 <li>Interaction design</li>
@@ -112,9 +195,7 @@
                 <span>Web</span>
             </div>
             <h3>Frontend Development</h3>
-            <p>
-                Shipping responsive, clean interfaces that respect spacing, typography, and performance.
-            </p>
+            <p>Shipping responsive, clean interfaces that respect spacing, typography, and performance.</p>
             <ul class="skill-tags">
                 <li>HTML / CSS / JS</li>
                 <li>Responsive layouts</li>
@@ -129,9 +210,7 @@
                 <span>Visual</span>
             </div>
             <h3>Graphic Design</h3>
-            <p>
-                Crafting visual systems, logos, and layouts that feel modern without being loud.
-            </p>
+            <p>Crafting visual systems, logos, and layouts that feel modern without being loud.</p>
             <ul class="skill-tags">
                 <li>Illustrator</li>
                 <li>Photoshop</li>
@@ -146,30 +225,11 @@
                 <span>Brand & Growth</span>
             </div>
             <h3>Social & Positioning</h3>
-            <p>
-                Helping products show up clearly online – consistent story, consistent visuals, consistent output.
-            </p>
+            <p>Helping products show up clearly online. Consistent story, consistent visuals, consistent output.</p>
             <ul class="skill-tags">
                 <li>Content strategy</li>
                 <li>Brand tone</li>
                 <li>Analytics</li>
-            </ul>
-        </article>
-
-        <!-- Android / Kotlin -->
-        <article class="skill-card reveal">
-            <div class="skill-pill">
-                <span class="dot"></span>
-                <span>Expanding</span>
-            </div>
-            <h3>Android & Kotlin</h3>
-            <p>
-                Bringing Goalsreach and future tools to Android, keeping experience aligned across platforms.
-            </p>
-            <ul class="skill-tags">
-                <li>Kotlin basics</li>
-                <li>Android UI patterns</li>
-                <li>Cross-platform thinking</li>
             </ul>
         </article>
 
@@ -180,15 +240,12 @@
                 <span>Content</span>
             </div>
             <h3>Video Editing</h3>
-            <p>
-                Producing clean, to-the-point edits that support the product narrative rather than distract from it.
-            </p>
+            <p>Producing clean, to-the-point edits that support the product narrative rather than distract from it.</p>
             <ul class="skill-tags">
                 <li>Premiere Pro</li>
                 <li>After Effects</li>
                 <li>Short-form content</li>
                 <li>CapCut</li>
-
             </ul>
         </article>
 
@@ -199,9 +256,7 @@
                 <span>Exploration</span>
             </div>
             <h3>Prototyping & Mockups</h3>
-            <p>
-                Quickly testing ideas as interactive prototypes so decisions are made on behaviour, not imagination.
-            </p>
+            <p>Quickly testing ideas as interactive prototypes so decisions are made on behaviour, not imagination.</p>
             <ul class="skill-tags">
                 <li>Figma prototypes</li>
                 <li>InVision</li>
@@ -216,24 +271,23 @@
                 <span>Reality Check</span>
             </div>
             <h3>User Testing</h3>
-            <p>
-                Getting honest feedback early and using it to remove friction instead of defending ego.
-            </p>
+            <p>Getting honest feedback early and using it to remove friction instead of defending ego.</p>
             <ul class="skill-tags">
                 <li>Usability sessions</li>
                 <li>Feedback synthesis</li>
                 <li>Iteration cycles</li>
             </ul>
         </article>
+
     </div>
-       </div>
+    </div>
 </section>
 
 <!-- Projects Section -->
 <section id="projects" class="projects-section reveal">
     <h2 class="section-title">Projects</h2>
     <p class="projects-intro">
-        A mix of shipped products and concept work – all centred around building clear, 
+        A mix of shipped products and concept work. All centred around building clear,
         honest tools that people actually keep using.
     </p>
 
@@ -243,7 +297,7 @@
             <!-- Goalsreach -->
             <article class="project-card reveal">
                 <div class="project-media">
-                    <img src="../images/goalsreach-cover.jpg" alt="Goalsreach App Cover" loading="lazy">
+                    <img src="../images/project_covers/goalsreach-cover.jpg" alt="Goalsreach App Cover" loading="lazy">
                 </div>
                 <div class="project-body">
                     <div class="project-pill">
@@ -254,54 +308,56 @@
                     <p class="project-tag">iOS Development · Product Design</p>
                     <p>
                         A self-built productivity app that turns goals into clear, trackable commitments.
-                        Goalsreach uses points, streaks, and simple visuals to reward consistency instead
-                        of short bursts of motivation.
+                        Points, streaks, and simple visuals reward consistency instead of short bursts of motivation.
                     </p>
                     <p>
-                        Designed and developed end-to-end in Swift / SwiftUI – from flows and visuals to
+                        Designed and developed end to end in Swift / SwiftUI. From flows and visuals to
                         App Store deployment and ongoing iteration.
                     </p>
                     <div class="project-buttons">
                         <a href="goalsreach.html" class="btn">Explore Goalsreach</a>
-                        <a href="https://goalsreach.co.uk" class="btn" target="_blank">Website</a>
-                        <a href="https://apps.apple.com/ie/app/goalsreach/id6479711415" class="btn" target="_blank">App Store</a>
+                        <a href="https://goalsreach.co.uk" class="btn" target="_blank" rel="noopener">Website</a>
+                        <a href="https://apps.apple.com/ie/app/goalsreach/id6479711415" class="btn" target="_blank" rel="noopener">App Store</a>
                     </div>
                 </div>
             </article>
 
-            <!-- BrandCore -->
+            <!-- BrandFounder -->
             <article class="project-card reveal">
                 <div class="project-media">
-                    <img src="../images/corebrand-cover.png" alt="BrandCore App Cover" loading="lazy">
+                    <img src="../images/brandfounder/brandfounder-space-post.png" alt="BrandFounder App Cover" loading="lazy">
                 </div>
                 <div class="project-body">
                     <div class="project-pill">
                         <span class="dot"></span>
-                        <span>In Build · AI Product</span>
+                        <span>Live · iOS App</span>
                     </div>
-                    <h3>BrandCore</h3>
+                    <h3>BrandFounder</h3>
                     <p class="project-tag">iOS Development · AI Product Design</p>
                     <p>
-                        An AI-powered branding tool that gives early founders a sharper starting point –
-                        brand direction, tone, and first product angles generated into something usable,
+                        An AI branding tool that gives early founders a sharper starting point.
+                        Brand direction, tone, and first product angles generated into something usable,
                         not just a wall of ideas.
                     </p>
                     <p>
-                        Built in SwiftUI with OpenAI integration, focusing on clean UI, predictable flows,
-                        and output that feels like a thoughtful partner rather than random noise.
+                        Built in SwiftUI with OpenAI integration. Clean UI, predictable flows, and output
+                        that feels like a thoughtful partner rather than random noise.
                     </p>
+                    <div class="project-buttons">
+                        <a href="https://brandfounder.ai" class="btn" target="_blank" rel="noopener">Visit BrandFounder</a>
+                    </div>
                 </div>
             </article>
 
             <!-- MatchMinded -->
             <article class="project-card reveal">
                 <div class="project-media">
-                    <img src="../images/matchminded-cover.png" alt="MatchMinded App Cover" loading="lazy">
+                    <img src="../images/project_covers/matchminded-cover.png" alt="MatchMinded App Cover" loading="lazy">
                 </div>
                 <div class="project-body">
                     <div class="project-pill">
                         <span class="dot"></span>
-<span>Concept · Compatibility Over Aesthetics Dating App</span>
+                        <span>Concept · Dating App</span>
                     </div>
                     <h3>MatchMinded</h3>
                     <p class="project-tag">UX / UI Design · Behaviour</p>
@@ -314,8 +370,8 @@
                         push for honesty over pure swipe dopamine.
                     </p>
                     <div class="project-buttons">
-                        <a href="https://www.figma.com/design/PuXmkCebKs16MJ1eluaXe4/MatchMinded-High-Fidelity-Prototype?node-id=471-8377&t=dsNJxPWTLtb9Deiv-1" class="btn" target="_blank">
-                            View Figma Prototype
+                        <a href="https://www.figma.com/design/PuXmkCebKs16MJ1eluaXe4/MatchMinded-High-Fidelity-Prototype?node-id=471-8377&t=dsNJxPWTLtb9Deiv-1" class="btn" target="_blank" rel="noopener">
+                            View Prototype
                         </a>
                     </div>
                 </div>
@@ -324,17 +380,17 @@
             <!-- Bristol Bridge Club -->
             <article class="project-card reveal">
                 <div class="project-media">
-                    <img src="../images/bristolbridgeclub-cover.jpg" alt="Bristol Bridge Club Website Redesign" loading="lazy">
+                    <img src="../images/project_covers/bristolbridgeclub-cover.jpg" alt="Bristol Bridge Club Website Redesign" loading="lazy">
                 </div>
                 <div class="project-body">
                     <div class="project-pill">
                         <span class="dot"></span>
-                        <span>Client · Restricted Web CMS</span>
+                        <span>Client · Web CMS</span>
                     </div>
                     <h3>Bristol Bridge Club</h3>
                     <p class="project-tag">UX / UI · Web Development</p>
                     <p>
-                        A full redesign for an established club with an older audience – improving readability,
+                        A full redesign for an established club with an older audience. Improving readability,
                         navigation, and trust while working inside a very restrictive Pianola CMS.
                     </p>
                     <p>
@@ -342,8 +398,8 @@
                         content strategy handover for the committee.
                     </p>
                     <div class="project-buttons">
-                        <a href="https://www.bristolbridgeclub.co.uk" class="btn" target="_blank">Live Site</a>
-                        <a href="https://www.figma.com/design/KP4lJWjkwCuWBCuckzLYs7/Bristol-Bridge-Club?node-id=0-1&t=gXkYSgJiMAanx8gs-1" class="btn" target="_blank">
+                        <a href="https://www.bristolbridgeclub.co.uk" class="btn" target="_blank" rel="noopener">Live Site</a>
+                        <a href="https://www.figma.com/design/KP4lJWjkwCuWBCuckzLYs7/Bristol-Bridge-Club?node-id=0-1&t=gXkYSgJiMAanx8gs-1" class="btn" target="_blank" rel="noopener">
                             View Prototype
                         </a>
                     </div>
@@ -353,26 +409,26 @@
             <!-- Campus Companion -->
             <article class="project-card reveal">
                 <div class="project-media">
-                    <img src="../images/Campus.png" alt="Campus Companion Cover Image" loading="lazy">
+                    <img src="../images/project_covers/campus-cover.png" alt="Campus Companion Cover Image" loading="lazy">
                 </div>
                 <div class="project-body">
                     <div class="project-pill">
                         <span class="dot"></span>
-                        <span>Concept · Student Engagement Social Media</span>
+                        <span>Concept · Student App</span>
                     </div>
                     <h3>Campus Companion</h3>
                     <p class="project-tag">UX / UI Design · Product Thinking</p>
                     <p>
-                        A concept app for students trying to keep on top of deadlines, habits, and campus life –
-                        blending task management with the same momentum ideas behind Goalsreach.
+                        A concept app for students trying to keep on top of deadlines, habits, and campus life.
+                        Blends task management with the same momentum ideas behind Goalsreach.
                     </p>
                     <p>
                         Built as an interactive Figma prototype with detailed user flows, scenarios, and
-                        interface explorations for both day-to-day planning and long-term goals.
+                        interface explorations for both daily planning and long-term goals.
                     </p>
                     <div class="project-buttons">
-                        <a href="https://www.figma.com/proto/hgQjlKQBxLheTp4b7sxztj/Campus-Companion-iOS-Prototype?node-id=402-112&t=2IVtkmVyn9GQsz1H-1" class="btn" target="_blank">
-                            View Figma Prototype
+                        <a href="https://www.figma.com/proto/hgQjlKQBxLheTp4b7sxztj/Campus-Companion-iOS-Prototype?node-id=402-112&t=2IVtkmVyn9GQsz1H-1" class="btn" target="_blank" rel="noopener">
+                            View Prototype
                         </a>
                     </div>
                 </div>
@@ -384,132 +440,74 @@
 
 <!-- What I'm Working On Section -->
 <section id="current-work" class="current-work-section reveal">
-    <h2 class="section-title">What I’m Working On</h2>
+    <h2 class="section-title">Focus Right Now</h2>
     <p class="current-work-intro">
-        Right now I’m focused on building the kind of clear, honest digital tools I wish I’d had 
-        when I first started trying to get my life in order – products that remove friction, 
-        reward discipline, and make it easier to actually follow through.
+        Building momentum on two fronts: making BrandFounder work as a real business, and learning what it actually takes to get people to buy.
     </p>
 
     <div class="current-work-grid">
-        <!-- BrandCore -->
-        <article class="current-work-card reveal">
+
+        <!-- BrandFounder — featured, full width -->
+        <article class="current-work-card card-featured reveal">
             <div class="current-work-content">
-                <div class="current-work-pill">
+                <div class="current-work-pill pill-indigo">
                     <span class="dot"></span>
-                    <span>In build · AI product</span>
+                    <span>Product · Revenue</span>
                 </div>
-                <h3>BrandCore – A head-start for new founders</h3>
-                <p>
-                    BrandCore is my way of giving early founders a clearer starting line. It pulls together
-                    identity, messaging, and first product directions into something concrete they can move with,
-                    instead of vague ideas and scattered notes.
-                </p>
-                <p class="current-work-meta">
-                    I’m tightening the flows, cutting the bloat, and making sure the output feels more like a 
-                    thoughtful partner than a random AI brainstorm.
-                </p>
+                <h3>BrandFounder: from tool to business</h3>
+                <p>Built the MVP. Now it's about finding product market fit: what founders actually need, who pays, and making the output genuinely worth paying for.</p>
+                <p>Ruthlessly cutting features, tightening the core loop, and testing pricing that doesn't feel like a scam.</p>
+                <p class="current-work-meta">The real work: proving people will choose this over DIY and a blank document.</p>
             </div>
-            <div class="current-work-image">
-                <div class="current-work-image-inner">
-                    <img src="../images/corebrand-preview.png" alt="BrandCore preview" class="work-image">
-                </div>
+            <div class="current-work-visual">
+                <img src="../images/brandfounder/brandfounder-space-post.png" alt="BrandFounder preview">
             </div>
         </article>
 
-        <!-- Goalsreach – shipping the app I needed -->
-        <article class="current-work-card card-right reveal">
+        <!-- Social & Growth -->
+        <article class="current-work-card card-half reveal">
             <div class="current-work-content">
-                <div class="current-work-pill">
+                <div class="current-work-pill pill-orange">
                     <span class="dot"></span>
-                    <span>Live on iOS</span>
+                    <span>Growth · Content</span>
                 </div>
-                <h3>Goalsreach – The accountability system I wanted at 18</h3>
-                <p>
-                    Goalsreach started as a way to keep myself honest when motivation dipped. I’m now refining it
-                    into a product that genuinely helps people stack wins: cleaner UX, better feedback loops,
-                    and rewards that encourage consistency over dopamine spikes.
-                </p>
-                <p class="current-work-meta">
-                    Current focus: smoothing onboarding, making streaks feel meaningful, and tightening the small
-                    details that make an app feel “kept” rather than abandoned.
-                </p>
+                <h3>Learning to sell on TikTok and Instagram</h3>
+                <p>Moving beyond "build something good and hope." Learning short-form video, showing the work in progress, and talking to founders where they actually are.</p>
+                <p>Building an audience before I need one. Not vanity metrics. People who actually care about what I'm making.</p>
+                <p class="current-work-meta">This is the skill gap I'm closing right now.</p>
             </div>
-            <div class="current-work-image">
-                <div class="current-work-image-inner">
-                    <img src="../images/Goalsreach/collaborative-goal.png" alt="Goalsreach preview" class="work-image">
-                </div>
+            <div class="current-work-visual visual-portrait">
+                <img src="../images/carter_photos/Carter4.png" alt="Carter">
             </div>
         </article>
 
-        <!-- Collaboration & backend -->
-        <article class="current-work-card reveal">
+        <!-- Goalsreach -->
+        <article class="current-work-card card-half reveal">
             <div class="current-work-content">
-                <div class="current-work-pill">
+                <div class="current-work-pill pill-blue">
                     <span class="dot"></span>
-                    <span>Engineering depth</span>
+                    <span>Live · iOS</span>
                 </div>
-                <h3>Making progress social, not just personal</h3>
-                <p>
-                    I’m building out the backend foundations for shared goals, small accountability groups, and
-                    lightweight social features – the kind of structure that makes it easier to show up because
-                    other people are counting on you too.
-                </p>
-                <p class="current-work-meta">
-                    This is where I’m pushing deeper into Firebase, data modelling, and real-time sync that still
-                    feels simple and calm on the surface.
-                </p>
+                <h3>Goalsreach: tightening what works</h3>
+                <p>The app is live and people use it. Now it's about removing friction: smoother onboarding, making streaks feel earned, fixing the details that add up.</p>
+                <p>Not adding everything. Keeping it honest and simple so people actually open it every day.</p>
+            </div>
+            <div class="current-work-visual">
+                <img src="../images/goalsreach/goalsreach-post.png" alt="Goalsreach">
             </div>
         </article>
 
- <!-- Platform reach / Android -->
-<article class="current-work-card reveal">
-    <div class="current-work-content">
-        <div class="current-work-pill">
-            <span class="dot"></span>
-            <span>Platform reach</span>
-        </div>
-
-        <h3>Bringing the same discipline tools to Android</h3>
-
-        <p>
-            Not everyone lives inside the Apple ecosystem, so I’m learning Kotlin to bring the same core
-            principles of Goalsreach to Android – clear goals, honest tracking, and a sense that effort
-            actually compounds.
-        </p>
-
-        <p class="current-work-meta">
-            The aim is parity without mindless cloning: each platform should feel native and considered,
-            not like a port.
-        </p>
-    </div>
-
-    <div class="current-work-image">
-        <div class="current-work-image-inner">
-            <img src="../images/kotlin.jpg" alt="Kotlin Logo">
-        </div>
-    </div>
-</article>
-
-        <!-- Direction of travel -->
-        <article class="current-work-card no-image reveal">
-            <div class="current-work-content">
-                <div class="current-work-pill">
-                    <span class="dot"></span>
-                    <span>Direction</span>
-                </div>
-                <h3>Where I’m deliberately heading</h3>
-                <p>
-                    Everything I’m building points in the same direction: fewer excuses, more agency, and tools
-                    that support people who are genuinely trying to get their life sorted.
-                </p>
-                <ul class="current-work-list">
-                    <li>Sharpening my iOS engineering so products ship faster and cleaner.</li>
-                    <li>Turning BrandCore and Goalsreach into serious, revenue-backed products.</li>
-                    <li>Working with people who value clear thinking, long-term focus, and real output.</li>
-                </ul>
+        <!-- The next thing — full width, minimal -->
+        <article class="current-work-card card-minimal reveal">
+            <div class="current-work-pill pill-dim">
+                <span class="dot"></span>
+                <span>What's next</span>
             </div>
+            <h3>The next thing</h3>
+            <p>Watching what BrandFounder teaches me. Talking to founders about what's broken. Only building when it's obvious people want it.</p>
+            <p class="current-work-meta">No solution looking for a problem.</p>
         </article>
+
     </div>
 </section>
 
@@ -517,11 +515,11 @@
 <section id="experience" class="experience-section reveal">
     <h2 class="experience-title section-title">Experience</h2>
     <p class="experience-intro">
-        My work sits where design, engineering, and momentum meet – building products that look clean,
-        behave predictably, and actually get used.
+        Product work, design, and engineering. All done end to end. Nothing handed off.
     </p>
 
     <div class="experience-grid">
+
         <!-- iOS Developer -->
         <article class="experience-item reveal">
             <div class="experience-marker"></div>
@@ -532,13 +530,13 @@
                 </div>
                 <h3>iOS Developer</h3>
                 <p class="experience-summary">
-                    Designing and building Swift / SwiftUI apps with a focus on clarity, performance,
-                    and small interaction details that make the product feel “kept”.
+                    Designing and building Swift / SwiftUI apps. Focus on clarity, performance,
+                    and the small details that make a product feel properly finished.
                 </p>
                 <ul class="experience-list">
-                    <li>End-to-end feature work: from sketches to App Store build.</li>
-                    <li>Clean, testable architecture and predictable navigation flows.</li>
-                    <li>Thoughtful use of animations and haptics to guide behaviour, not distract.</li>
+                    <li>Full feature work from sketch to App Store build.</li>
+                    <li>Clean architecture and predictable navigation flows.</li>
+                    <li>Animations and haptics that guide behaviour without showing off.</li>
                 </ul>
             </div>
         </article>
@@ -553,13 +551,13 @@
                 </div>
                 <h3>UI / UX Designer</h3>
                 <p class="experience-summary">
-                    Turning loose ideas into structured flows, prototypes, and interfaces that people
-                    understand without needing a walkthrough.
+                    Taking loose ideas and turning them into structured flows and interfaces people understand
+                    without needing a walkthrough.
                 </p>
                 <ul class="experience-list">
                     <li>Mapping user journeys and removing friction at key decision points.</li>
-                    <li>High-fidelity Figma prototypes with interaction detail for engineers and stakeholders.</li>
-                    <li>User testing and iteration with a bias towards simple solutions.</li>
+                    <li>High-fidelity Figma prototypes with enough detail for engineers and stakeholders.</li>
+                    <li>User testing and iteration with a bias towards the simplest solution that works.</li>
                 </ul>
             </div>
         </article>
@@ -574,13 +572,13 @@
                 </div>
                 <h3>Frontend Developer</h3>
                 <p class="experience-summary">
-                    Building responsive, modern interfaces for founders and clients who care about polish
-                    as much as function.
+                    Building responsive, modern web interfaces for founders and clients who care about
+                    polish as much as function.
                 </p>
                 <ul class="experience-list">
                     <li>Implementing designs in clean HTML, CSS, and JavaScript.</li>
-                    <li>Prioritising legibility, spacing, and motion that supports the content.</li>
-                    <li>Working within constraints – CMSes, legacy layouts, and tight timelines.</li>
+                    <li>Legibility, spacing, and motion that supports the content.</li>
+                    <li>Working within constraints: CMSes, legacy layouts, and tight timelines.</li>
                 </ul>
             </div>
         </article>
@@ -595,8 +593,8 @@
                 </div>
                 <h3>Social / Brand Work</h3>
                 <p class="experience-summary">
-                    Helping small teams show up consistently online with clear positioning and simple,
-                    repeatable content.
+                    Helping small teams show up consistently online with clear positioning and
+                    content that actually supports the product.
                 </p>
                 <ul class="experience-list">
                     <li>Shaping brand tone and visual identity across platforms.</li>
@@ -606,137 +604,98 @@
             </div>
         </article>
 
-        <!-- Physical work -->
-        <article class="experience-item reveal">
-            <div class="experience-marker"></div>
-            <div class="experience-card-shell">
-                <div class="experience-pill">
-                    <span class="dot"></span>
-                    <span>Work Ethic</span>
-                </div>
-                <h3>Industrial & Hands-on Roles</h3>
-                <p class="experience-summary">
-                    Time in physical, high-effort environments that built discipline, resilience,
-                    and a bias towards getting on with it.
-                </p>
-                <ul class="experience-list">
-                    <li>Long, demanding shifts – showing up whether it’s convenient or not.</li>
-                    <li>Working in teams where reliability matters more than titles.</li>
-                    <li>Carrying that mindset into how I approach engineering and product work.</li>
-                </ul>
-            </div>
-        </article>
     </div>
 </section>
 
 <!-- About Section -->
 <section id="about" class="about-section reveal">
-    <div class="about-container">
-        <h2 class="section-title">About Me</h2>
 
-        <!-- Block 1 -->
-        <article class="about-card reveal">
-            <div class="about-content">
-                <div class="about-pill">
-                    <span class="dot"></span>
-                    <span>Background</span>
-                </div>
-                <h3>Design and engineering in one lane</h3>
-                <p>
-                    I’m an iOS developer and product-focused designer with a
-                    <strong>First-Class Honours BSc in Digital Media</strong> from UWE Bristol.
-                    I like sitting in the overlap – where interaction design, code, and user reality
-                    all have to agree with each other.
-                </p>
-                <p>
-                    Most of my work starts from the same question: “Would I actually use this if
-                    I wasn’t the one building it?”
-                </p>
-            </div>
-            <div class="about-image">
-                <div class="about-image-inner">
-                    <img src="../images/Carter/Carter3.png" alt="Carter Manahan">
-                </div>
-            </div>
-        </article>
+    <!-- Pull Quote -->
+    <blockquote class="pull-quote reveal">
+        Building tools I wish I had when I was 18.
+    </blockquote>
 
-        <!-- Block 2 -->
-        <article class="about-card about-card-alt reveal">
-            <div class="about-content">
-                <div class="about-pill">
-                    <span class="dot"></span>
-                    <span>Products</span>
+    <!-- Profile Hero -->
+    <div class="about-profile reveal">
+        <div class="about-profile-photo">
+            <img src="../images/carter_photos/Carter3.png" alt="Carter Manahan">
+        </div>
+        <div class="about-profile-content">
+            <span class="about-credential">First Class Honours · BSc Digital Media · UWE Bristol</span>
+            <h3 class="about-profile-name">Carter Manahan</h3>
+            <p class="about-profile-role">iOS Developer · Product Designer · Founder</p>
+            <div class="about-stats-row">
+                <div class="about-stat">
+                    <span class="stat-num" data-target="2">0</span>
+                    <span class="stat-label">Products shipped</span>
                 </div>
-                <h3>Building tools I wish I’d had earlier</h3>
-                <p>
-                    <strong>Goalsreach</strong> is the discipline app I needed when I was trying to
-                    get my training, work, and life aligned. It rewards consistency over dopamine,
-                    turns goals into clear commitments, and helps people actually see their momentum.
-                </p>
-                <p>
-                    <strong>BrandCore</strong> is built for early founders who don’t want to spend
-                    months guessing. It turns scattered ideas into brand foundations, messaging, and
-                    early product direction – something concrete they can ship from.
-                </p>
-            </div>
-            <div class="about-image">
-                <div class="about-image-inner">
-                    <img src="../images/Goalsreach/grcb2.png" alt="Product preview">
+                <div class="about-stat">
+                    <span class="stat-num" data-target="5">0</span>
+                    <span class="stat-label">Projects built</span>
                 </div>
-            </div>
-        </article>
-
-        <!-- Block 3 -->
-        <article class="about-card reveal">
-            <div class="about-content">
-                <div class="about-pill">
-                    <span class="dot"></span>
-                    <span>How I work</span>
-                </div>
-                <h3>Small feedback loops, serious intent</h3>
-                <p>
-                    I prefer tight, honest loops: design → build → test → refine. No drama, no
-                    theatrics – just steady, compounding improvements until the product feels
-                    calm, sharp, and obvious to use.
-                </p>
-                <p>
-                    I’m comfortable taking a feature from first sketch to shipped build, and I care
-                    a lot about the “edges” – empty states, error handling, and the way the product
-                    behaves when real people push it.
-                </p>
-            </div>
-            <div class="about-image">
-                <div class="about-image-inner">
-                    <img src="../images/Carter/carter-work.jpg" alt="Carter working">
+                <div class="about-stat">
+                    <span class="stat-num" data-target="2">0</span>
+                    <span class="stat-label">Apps on the Store</span>
                 </div>
             </div>
-        </article>
-
-        <!-- Block 4 -->
-        <article class="about-card about-card-full reveal">
-            <div class="about-content">
-                <div class="about-pill">
-                    <span class="dot"></span>
-                    <span>Principles</span>
-                </div>
-                <h3>Clarity, discipline, and long-term games</h3>
-                <p>
-                    I care about tools that make people feel more in control of their time, their
-                    progress, and their direction. That shows up in how I train, how I work, and how
-                    I approach teams: clear expectations, direct communication, and a focus on 
-                    long-term output over short flashes of motivation.
-                </p>
+            <p class="about-profile-bio">
+                I sit at the overlap where interaction design, code, and user reality all have to agree.
+                Every product I build starts from the same question: would I actually use this if I wasn't the one building it?
+            </p>
+            <div class="about-tech-tags">
+                <span>Swift / SwiftUI</span>
+                <span>Figma</span>
+                <span>Product Design</span>
+                <span>HTML / CSS / JS</span>
+                <span>AI Products</span>
             </div>
-        </article>
+        </div>
     </div>
+
+    <!-- 3 Cards — horizontal row -->
+    <div class="about-cards-row">
+
+        <article class="about-card-new reveal" style="transition-delay: 0ms">
+            <div class="about-card-accent accent-indigo"></div>
+            <div class="about-card-pill-new">
+                <span class="dot dot-indigo"></span>Products
+            </div>
+            <h3>Two products. Both real.</h3>
+            <p><strong>Goalsreach</strong> is the accountability app I needed at 18. Goals, streaks, and momentum in one place.</p>
+            <p><strong>BrandFounder</strong> gives early founders a sharper starting line: identity, messaging, and direction, generated into something they can actually move with.</p>
+            <p class="about-card-meta">Neither was built for a portfolio.</p>
+        </article>
+
+        <article class="about-card-new reveal" style="transition-delay: 110ms">
+            <div class="about-card-accent accent-blue"></div>
+            <div class="about-card-pill-new">
+                <span class="dot dot-blue"></span>Process
+            </div>
+            <h3>Small loops, serious intent.</h3>
+            <p>Design, build, test, refine. No theatrics. Just compounding improvements until the product feels calm, sharp, and obvious to use.</p>
+            <p>I care about the edges: empty states, error handling, and what happens when real people push it.</p>
+        </article>
+
+        <article class="about-card-new reveal" style="transition-delay: 220ms">
+            <div class="about-card-accent accent-purple"></div>
+            <div class="about-card-pill-new">
+                <span class="dot dot-purple"></span>Principles
+            </div>
+            <h3>Clarity. Discipline. Long games.</h3>
+            <p>I care about tools that make people feel more in control of their time and direction. Clear expectations, direct communication, long-term output over short flashes of motivation.</p>
+        </article>
+
+    </div>
+
 </section>
 
 <!-- Contact Section -->
 <section id="contact" class="contact-section reveal">
     <h2 class="section-title">Contact</h2>
+    <p class="contact-tagline">If you're building something real, let's talk.</p>
     <p class="contact-intro">
-        If you’re building something and want help shaping the product, sharpening the UX,
-        or bringing an iOS experience to life, send a message below.
+        If you want help shaping a product, sharpening the UX, or bringing an iOS experience to life,
+        send a message below.
     </p>
 
     <div class="contact-card">
@@ -773,7 +732,7 @@
                             id="message"
                             name="message"
                             rows="8"
-                            placeholder="A bit about you, what you’re building, or how I can help."
+                            placeholder="A bit about you, what you're building, or how I can help."
                             required
                         ></textarea>
                     </div>
@@ -788,20 +747,27 @@
 <footer class="site-footer">
     <div class="footer-inner">
         <div class="footer-left">
-            <p>&copy; 2025 Carter Manahan</p>
+            <p>&copy; 2026 Carter Manahan</p>
             <p class="footer-sub">iOS development · product design · momentum-focused tools</p>
+            <div class="footer-product-links">
+                <a href="https://goalsreach.co.uk" target="_blank" rel="noopener" class="footer-product-link">Goalsreach</a>
+                <span class="footer-divider">·</span>
+                <a href="https://brandfounder.ai" target="_blank" rel="noopener" class="footer-product-link">BrandFounder</a>
+            </div>
         </div>
         <div class="footer-right">
-            <a href="https://github.com/cartermanahan" target="_blank" class="social-link">
-                <img src="../images/icons/github.png" alt="GitHub">
+            <a href="https://github.com/cartermanahan" target="_blank" rel="noopener" class="social-link">
+                <img src="../images/social_media_icons/github.png" alt="GitHub">
             </a>
-            <a href="https://www.linkedin.com/in/carter-manahan-140299330/" target="_blank" class="social-link">
-                <img src="../images/icons/linkedin-logo.png" alt="LinkedIn">
+            <a href="https://www.linkedin.com/in/carter-manahan-140299330/" target="_blank" rel="noopener" class="social-link">
+                <img src="../images/social_media_icons/linkedin-logo.png" alt="LinkedIn">
             </a>
         </div>
     </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="../scripts/home.js"></script>
 <script>
     // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -824,9 +790,31 @@
                     obs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Animated stat counters
+        const statEls = document.querySelectorAll('.stat-num[data-target]');
+        if (statEls.length) {
+            const statObs = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target, 10);
+                    const duration = 900;
+                    const interval = Math.max(20, Math.floor(duration / target));
+                    let current = 0;
+                    const tick = setInterval(() => {
+                        current++;
+                        el.textContent = current;
+                        if (current >= target) { clearInterval(tick); }
+                    }, interval);
+                    obs.unobserve(el);
+                });
+            }, { threshold: 0.6 });
+            statEls.forEach(el => statObs.observe(el));
+        }
     });
 </script>
 

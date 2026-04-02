@@ -44,19 +44,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /*-----------------------------
-      Sticky Navbar on Scroll
+      Sticky Navbar + Hide on Scroll Down
     -----------------------------*/
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
         if (!navbar) return;
+        const current = window.scrollY;
 
-        if (window.scrollY > 50) {
+        if (current > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
+
+        // Hide on scroll down, reveal on scroll up
+        if (current > lastScrollY && current > 100) {
+            navbar.classList.add('nav-hidden');
+        } else {
+            navbar.classList.remove('nav-hidden');
+        }
+
+        lastScrollY = current;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // run once on load
 
     /*-----------------------------

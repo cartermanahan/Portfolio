@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="iOS app and brand services by Carter Manahan – iOS Developer and Product-focused Designer.">
-    <meta name="keywords" content="iOS apps, iOS developer, brand identity, product design, Swift, SwiftUI">
-    <title>Services – Carter Manahan</title>
+    <meta name="description" content="Services by Carter Manahan. iOS apps, brand identity, and websites for founders and creators.">
+    <title>Services · Carter Manahan</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/home.css">
     <link rel="stylesheet" href="../styles/services.css">
     <link rel="stylesheet" href="../styles/navbar.css">
-    <link rel="icon" type="image/png" href="../images/Icons/github.png">
+    <link rel="icon" type="image/png" href="../images/cmlogo.png">
 
     <script src="../scripts/navbar.js" defer></script>
 </head>
@@ -29,9 +29,8 @@
         <nav class="nav-links">
             <ul>
                 <li><a href="home.html" class="nav-cta">Home</a></li>
-                <li><a href="#offer">Services</a></li>
-                <li><a href="#why-ios">Why iOS</a></li>
-                <li><a href="#fit">Fit</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -43,224 +42,270 @@
     </div>
 </header>
 
-<!-- Services Hero -->
-<section class="services-hero">
-    <div class="services-hero-inner reveal">
-        <div class="services-pill">
+<!-- Hero -->
+<section class="sv-hero">
+    <div class="sv-hero-glow-red"></div>
+    <div class="sv-hero-glow-purple"></div>
+    <div class="sv-hero-content reveal">
+        <div class="sv-pill">
             <span class="dot"></span>
-            <span>Services · Brand & iOS</span>
+            <span>Available for projects</span>
         </div>
-        <h1>Brand and iOS that actually look finished.</h1>
-        <p>
-            I work with creators, founders and personal brands to build clean identities and Apple-level iOS apps.
-            The goal is simple: you look serious, your product is clear and people trust what they are tapping into.
-        </p>
-        <p class="services-hero-sub">
-            iOS only. Apple ecosystem. Straightforward delivery.
-        </p>
-        <div class="services-hero-actions">
-            <a href="#contact" class="btn primary-btn">Start a project</a>
-            <a href="home.html#projects" class="btn ghost-btn">View product work</a>
+        <h1>Need a brand, an app,<br>or a website?</h1>
+        <p class="sv-hero-sub">I build the things founders and creators need to look serious and move fast.</p>
+        <div class="sv-hero-actions">
+            <a href="#contact" class="btn sv-cta">Start a project</a>
+            <a href="#services" class="btn sv-ghost">See what I do</a>
         </div>
     </div>
 </section>
 
-<!-- Core Offer -->
-<section id="offer" class="services-section reveal">
-    <div class="container services-section-inner">
-        <h2 class="section-title">What I Do For You</h2>
-        <p class="services-intro">
-            I combine brand, product design and iOS engineering. You get something that feels like a real product,
-            not a random logo and a rushed app.
-        </p>
+<!-- Trust bar -->
+<div class="sv-trust reveal">
+    <div class="sv-trust-inner">
+        <span class="sv-trust-item">
+            <span class="sv-trust-dot dot-indigo"></span>
+            2 apps live on the App Store
+        </span>
+        <span class="sv-trust-divider"></span>
+        <span class="sv-trust-item">
+            <span class="sv-trust-dot dot-blue"></span>
+            Swift &amp; SwiftUI
+        </span>
+        <span class="sv-trust-divider"></span>
+        <span class="sv-trust-item">
+            <span class="sv-trust-dot dot-orange"></span>
+            Brand to launch
+        </span>
+        <span class="sv-trust-divider"></span>
+        <span class="sv-trust-item">
+            <span class="sv-trust-dot dot-purple"></span>
+            One person, start to finish
+        </span>
+    </div>
+</div>
 
-        <div class="services-grid">
-            <!-- Brand Foundation -->
-            <article class="service-card">
-                <div class="service-pill">
-                    <span class="dot"></span>
-                    <span>Brand foundation</span>
-                </div>
-                <h3>Brand identity that looks deliberate</h3>
-                <p>
-                    A simple, modern identity so people understand who you are and why you are worth paying attention to.
-                </p>
-                <ul class="service-list">
-                    <li>Logo and core visual system</li>
-                    <li>Digital-first colour and typography</li>
-                    <li>Brand tone and key messages</li>
-                    <li>Social media covers and base post styles</li>
-                </ul>
-            </article>
+<!-- Services -->
+<section id="services" class="sv-section">
+    <div class="sv-section-header reveal">
+        <h2 class="section-title">What I do</h2>
+        <p class="sv-section-sub">Pick one or combine them.</p>
+    </div>
 
-            <!-- iOS App -->
-            <article class="service-card">
-                <div class="service-pill">
-                    <span class="dot"></span>
-                    <span>iOS app build</span>
-                </div>
-                <h3>A native iOS app in the App Store</h3>
-                <p>
-                    A custom iOS app built in Swift and SwiftUI, aligned with your brand and the way you sell or deliver value.
-                </p>
-                <ul class="service-list">
-                    <li>Native iOS app designed and built from scratch</li>
-                    <li>Product or service layout that is easy to move through</li>
-                    <li>Apple Pay or in-app purchase flow where it makes sense</li>
-                    <li>Space for announcements, launches and updates</li>
-                    <li>App Store preparation and support through launch</li>
-                </ul>
-            </article>
+    <div class="sv-grid">
 
-            <!-- Brand + App Package -->
-            <article class="service-card service-card-highlight">
-                <div class="service-pill">
-                    <span class="dot"></span>
-                    <span>Brand + iOS</span>
-                </div>
-                <h3>The full “I am a real brand” setup</h3>
-                <p>
-                    Brand and app are scoped together so everything feels like one system. One person owning the whole thing
-                    instead of separate freelancers guessing.
-                </p>
-                <ul class="service-list">
-                    <li>Brand foundation and iOS app planned as one piece</li>
-                    <li>Consistent visuals across app, socials and assets</li>
-                    <li>Single point of contact from idea to launch</li>
-                    <li>Clear handover notes so you can keep using it without stress</li>
-                </ul>
-            </article>
+        <article class="sv-card reveal" style="transition-delay: 0ms">
+            <div class="sv-card-pill pill-indigo">
+                <span class="dot"></span>
+                <span>iOS Development</span>
+            </div>
+            <h3>Native iOS app</h3>
+            <p>Built in Swift and SwiftUI. Designed from scratch around what your users need to do. Shipped to the App Store.</p>
+            <ul class="sv-list">
+                <li>Custom UI aligned to your brand</li>
+                <li>Apple Pay and in-app purchase flows</li>
+                <li>Third-party API integrations</li>
+                <li>App Store submission and launch support</li>
+            </ul>
+        </article>
+
+        <article class="sv-card reveal" style="transition-delay: 80ms">
+            <div class="sv-card-pill pill-orange">
+                <span class="dot"></span>
+                <span>Brand Identity</span>
+            </div>
+            <h3>Brand that looks deliberate</h3>
+            <p>Logo, colours, type, tone. Everything you need to show up consistently and stop looking like you threw it together overnight.</p>
+            <ul class="sv-list">
+                <li>Logo and full visual system</li>
+                <li>Social media base templates</li>
+                <li>Brand tone and messaging</li>
+            </ul>
+        </article>
+
+        <article class="sv-card reveal" style="transition-delay: 160ms">
+            <div class="sv-card-pill pill-purple">
+                <span class="dot"></span>
+                <span>Web</span>
+            </div>
+            <h3>Website or graphics</h3>
+            <p>A clean, fast site that actually represents you. Or graphics, social assets, and visuals that match your brand and ship on time.</p>
+            <ul class="sv-list">
+                <li>Portfolio, landing, or product sites</li>
+                <li>Social media graphics and templates</li>
+                <li>Figma mockups and design assets</li>
+            </ul>
+        </article>
+
+        <article class="sv-card sv-card-featured reveal" style="transition-delay: 240ms">
+            <div class="sv-card-pill pill-blue">
+                <span class="dot"></span>
+                <span>Full package</span>
+            </div>
+            <h3>The full thing</h3>
+            <p>Brand, app, and web scoped together as one system. One person owns it start to finish. No briefing multiple freelancers, no inconsistencies.</p>
+            <ul class="sv-list">
+                <li>Everything planned as one product</li>
+                <li>Consistent across every surface</li>
+                <li>Single point of contact, idea to launch</li>
+            </ul>
+            <span class="sv-card-best">Most popular</span>
+        </article>
+
+    </div>
+</section>
+
+<!-- Process -->
+<section id="process" class="sv-section sv-process reveal">
+    <div class="sv-section-header">
+        <h2 class="section-title">How it works</h2>
+        <p class="sv-section-sub">No ambiguity. You know what's happening at every stage.</p>
+    </div>
+
+    <div class="sv-process-steps">
+        <div class="sv-step">
+            <div class="sv-step-num">01</div>
+            <div class="sv-step-body">
+                <h4>You reach out</h4>
+                <p>Tell me what you're building and what you need. No long brief required. A few sentences is enough to start.</p>
+            </div>
+        </div>
+        <div class="sv-step-connector"></div>
+        <div class="sv-step">
+            <div class="sv-step-num">02</div>
+            <div class="sv-step-body">
+                <h4>We scope it</h4>
+                <p>I come back with what's involved, what it costs, and how long it takes. We agree before anything starts.</p>
+            </div>
+        </div>
+        <div class="sv-step-connector"></div>
+        <div class="sv-step">
+            <div class="sv-step-num">03</div>
+            <div class="sv-step-body">
+                <h4>I build it</h4>
+                <p>Regular updates, no radio silence. You see progress at each stage and can give feedback before it's locked in.</p>
+            </div>
+        </div>
+        <div class="sv-step-connector"></div>
+        <div class="sv-step">
+            <div class="sv-step-num">04</div>
+            <div class="sv-step-body">
+                <h4>You launch</h4>
+                <p>Everything handed over clean. Files, access, and notes so you can keep using it without needing me every time.</p>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Why iOS -->
-<section id="why-ios" class="services-section services-section-alt reveal">
-    <div class="container services-section-inner">
-        <h2 class="section-title">Why an iOS App Matters</h2>
-        <p class="services-intro">
-            For people who already follow you or buy from you, “search me in the App Store” lands differently to
-            “here’s my link.” It signals commitment and gives them a smoother way to take action.
-        </p>
+<!-- Pricing -->
+<section class="sv-section sv-pricing reveal">
+    <div class="sv-section-header">
+        <h2 class="section-title">Pricing</h2>
+        <p class="sv-section-sub">Depends on the project. I'll always be upfront about what's involved before we start.</p>
+    </div>
+    <div class="sv-pricing-grid">
+        <div class="sv-pricing-card">
+            <div class="sv-card-pill pill-indigo">
+                <span class="dot"></span>
+                <span>Fixed scope</span>
+            </div>
+            <h3>Agreed upfront</h3>
+            <p>Most projects are quoted on scope. Complexity, the APIs involved, third-party integrations: all of it gets factored in. We agree a number before anything starts.</p>
+        </div>
+        <div class="sv-pricing-card sv-pricing-card-alt">
+            <div class="sv-card-pill pill-blue">
+                <span class="dot"></span>
+                <span>Revenue share</span>
+            </div>
+            <h3>20% commission</h3>
+            <p>Already selling something and just need the app? I'll build it for 20% of payments processed through it. You keep moving, I have skin in the game.</p>
+        </div>
+    </div>
+    <p class="sv-pricing-note">Not sure which fits? Just tell me what you're building. I'll be straight with you.</p>
+</section>
 
-        <div class="services-grid narrow-grid">
-            <article class="service-card">
-                <h3>Credibility at a glance</h3>
-                <p>
-                    An App Store presence makes you look established. It shows you have put time and money into what you do,
-                    not just a quick landing page and a bio link.
-                </p>
-            </article>
-
-            <article class="service-card">
-                <h3>A cleaner journey</h3>
-                <p>
-                    Open app, browse, pay with Apple Pay. No slow browser, no messy redirects. Less friction usually means
-                    more people follow through.
-                </p>
-            </article>
-
-            <article class="service-card">
-                <h3>Space you control</h3>
-                <p>
-                    Social platforms decide who sees your content. Inside your app, you control the timing and the experience.
-                    When you push something important, it is not competing with a feed.
-                </p>
-            </article>
+<!-- Who it's for -->
+<section class="sv-section sv-fit reveal">
+    <div class="sv-section-header">
+        <h2 class="section-title">Who this is for</h2>
+    </div>
+    <div class="sv-fit-grid">
+        <div class="sv-fit-card sv-fit-yes">
+            <div class="sv-card-pill pill-blue" style="margin-bottom: 20px;">
+                <span class="dot"></span>
+                <span>Good fit</span>
+            </div>
+            <ul class="sv-fit-list">
+                <li>
+                    <svg class="sv-check" viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Founders with a product and a scattered brand presence
+                </li>
+                <li>
+                    <svg class="sv-check" viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Creators who want an app as part of how they show up
+                </li>
+                <li>
+                    <svg class="sv-check" viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Anyone who communicates directly and makes decisions
+                </li>
+                <li>
+                    <svg class="sv-check" viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Businesses that already sell and want a cleaner experience
+                </li>
+            </ul>
+        </div>
+        <div class="sv-fit-card sv-fit-no">
+            <div class="sv-card-pill pill-dim" style="margin-bottom: 20px;">
+                <span class="dot"></span>
+                <span>Not a fit</span>
+            </div>
+            <ul class="sv-fit-list sv-fit-list-no">
+                <li>
+                    <svg class="sv-cross" viewBox="0 0 16 16"><line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    No product, no audience, no intent to move
+                </li>
+                <li>
+                    <svg class="sv-cross" viewBox="0 0 16 16"><line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    Looking for the cheapest option
+                </li>
+                <li>
+                    <svg class="sv-cross" viewBox="0 0 16 16"><line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    Expect constant chasing and hand-holding
+                </li>
+            </ul>
         </div>
     </div>
 </section>
 
-<!-- Fit Section -->
-<section id="fit" class="services-section services-section-alt reveal">
-    <div class="container services-section-inner">
-        <h2 class="section-title">Who This Is For</h2>
-        <p class="services-intro">
-            This works best when there is already some momentum. A product, an audience or at least a clear lane you are moving in.
-        </p>
-
-        <div class="fit-grid">
-            <article class="service-card">
-                <h3>Strong fit</h3>
-                <ul class="service-list">
-                    <li>Creators with real followers and offers that already sell.</li>
-                    <li>Founders with a working product and scattered brand presence.</li>
-                    <li>Personal brands who want “I have an app” as part of how they show up.</li>
-                    <li>People who like direct communication and clear decisions.</li>
-                </ul>
-            </article>
-
-            <article class="service-card">
-                <h3>Probably not a fit</h3>
-                <ul class="service-list">
-                    <li>Anyone expecting a full app for the cost of a logo.</li>
-                    <li>Projects with no product, no audience and no intent to move fast.</li>
-                    <li>People who avoid decisions, ghost or want constant chasing.</li>
-                </ul>
-            </article>
+<!-- Contact -->
+<section id="contact" class="sv-contact-section reveal">
+    <div class="sv-contact-inner">
+        <div class="sv-contact-left">
+            <div class="sv-card-pill pill-indigo" style="margin-bottom: 20px;">
+                <span class="dot"></span>
+                <span>Available now</span>
+            </div>
+            <h2>Start a project</h2>
+            <p>Tell me what you're building, what you need, and roughly when you want to move.</p>
+            <p class="sv-contact-note">I'll get back to you within a day.</p>
         </div>
-    </div>
-</section>
-
-<!-- Contact for Services -->
-<section id="contact" class="services-section services-contact-section reveal">
-    <div class="container services-contact-inner">
-        <h2 class="section-title">Start a Project</h2>
-        <p class="services-intro">
-            If you want a brand and iOS presence that feels considered, send a message with what you do, who you serve and
-            what you want this to change for you.
-        </p>
-
-        <div class="services-contact-card">
-            <form action="https://formspree.io/f/mrbgwlgz" method="POST" class="contact-form">
-                <div class="form-wrapper">
-                    <div class="form-left">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Who am I speaking to?"
-                                required
-                            >
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Where can I reply?"
-                                required
-                            >
-                        </div>
-                        <div class="form-group">
-                            <label for="role">What best describes you?</label>
-                            <input
-                                type="text"
-                                id="role"
-                                name="role"
-                                placeholder="Creator, founder, coach, brand owner..."
-                            >
-                        </div>
+        <div class="sv-contact-right">
+            <form action="https://formspree.io/f/mrbgwlgz" method="POST" class="sv-form">
+                <div class="sv-form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Who am I speaking to?" required>
                     </div>
-
-                    <div class="form-right">
-                        <div class="form-group">
-                            <label for="message">Project details</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="8"
-                                placeholder="What do you sell, who buys it, and what would a strong brand + iOS app change for you?"
-                                required
-                            ></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Where can I reply?" required>
                     </div>
                 </div>
-
-                <button type="submit" class="btn contact-btn">Send</button>
+                <div class="form-group">
+                    <label for="message">Project details</label>
+                    <textarea id="message" name="message" rows="6" placeholder="What you're building, what you need, and any timing." required></textarea>
+                </div>
+                <button type="submit" class="btn sv-submit-btn">Send</button>
             </form>
         </div>
     </div>
@@ -270,45 +315,87 @@
 <footer class="site-footer">
     <div class="footer-inner">
         <div class="footer-left">
-            <p>&copy; 2025 Carter Manahan</p>
+            <p>&copy; 2026 Carter Manahan</p>
             <p class="footer-sub">iOS development · product design · momentum-focused tools</p>
+            <div class="footer-product-links">
+                <a href="https://goalsreach.co.uk" target="_blank" rel="noopener" class="footer-product-link">Goalsreach</a>
+                <span class="footer-divider">·</span>
+                <a href="https://brandfounder.ai" target="_blank" rel="noopener" class="footer-product-link">BrandFounder</a>
+            </div>
         </div>
         <div class="footer-right">
-            <a href="https://github.com/cartermanahan" target="_blank" class="social-link">
-                <img src="../images/icons/github.png" alt="GitHub">
+            <a href="https://github.com/cartermanahan" target="_blank" rel="noopener" class="social-link">
+                <img src="../images/social_media_icons/github.png" alt="GitHub">
             </a>
-            <a href="https://www.linkedin.com/in/carter-manahan-140299330/" target="_blank" class="social-link">
-                <img src="../images/icons/linkedin-logo.png" alt="LinkedIn">
+            <a href="https://www.linkedin.com/in/carter-manahan-140299330/" target="_blank" rel="noopener" class="social-link">
+                <img src="../images/social_media_icons/linkedin-logo.png" alt="LinkedIn">
             </a>
         </div>
     </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script>
-    // Smooth scroll for on-page anchors
+    // Particles
+    (function () {
+        if (typeof THREE === 'undefined') return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const hero = document.querySelector('.sv-hero');
+        if (!hero) return;
+        const canvas = document.createElement('canvas');
+        canvas.id = 'sv-hero-canvas';
+        hero.prepend(canvas);
+        const getSize = () => ({ w: hero.offsetWidth, h: hero.offsetHeight });
+        let { w, h } = getSize();
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+        renderer.setSize(w, h);
+        renderer.setClearColor(0x000000, 0);
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(65, w / h, 0.1, 100);
+        camera.position.z = 6;
+        const COUNT = window.innerWidth < 768 ? 320 : 720;
+        const pos = new Float32Array(COUNT * 3);
+        const col = new Float32Array(COUNT * 3);
+        const palette = [
+            [0.388, 0.400, 0.945],[0.647, 0.706, 0.988],
+            [0.753, 0.518, 0.988],[0.980, 0.980, 1.000],
+            [0.388, 0.400, 0.945],[0.388, 0.400, 0.945],
+        ];
+        for (let i = 0; i < COUNT; i++) {
+            pos[i*3]=(Math.random()-0.5)*18; pos[i*3+1]=(Math.random()-0.5)*13; pos[i*3+2]=(Math.random()-0.5)*10-2;
+            const c=palette[Math.floor(Math.random()*palette.length)];
+            col[i*3]=c[0]; col[i*3+1]=c[1]; col[i*3+2]=c[2];
+        }
+        const geo = new THREE.BufferGeometry();
+        geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+        geo.setAttribute('color',    new THREE.BufferAttribute(col, 3));
+        const sprite = new THREE.TextureLoader().load('https://cdn.jsdelivr.net/gh/mrdoob/three.js/examples/textures/sprites/disc.png');
+        const mat = new THREE.PointsMaterial({ size: 0.055, vertexColors: true, transparent: true, opacity: 0.5, sizeAttenuation: true, map: sprite, alphaTest: 0.5 });
+        const points = new THREE.Points(geo, mat);
+        scene.add(points);
+        let mx=0,my=0,tx=0,ty=0;
+        window.addEventListener('mousemove', e => { mx=(e.clientX/window.innerWidth-0.5)*2; my=(e.clientY/window.innerHeight-0.5)*2; }, { passive: true });
+        window.addEventListener('resize', () => { const s=getSize(); camera.aspect=s.w/s.h; camera.updateProjectionMatrix(); renderer.setSize(s.w,s.h); });
+        (function tick(){ requestAnimationFrame(tick); tx+=(mx-tx)*0.032; ty+=(my-ty)*0.032; points.rotation.y=tx*0.2; points.rotation.x=ty*0.13; points.rotation.z+=0.0004; renderer.render(scene,camera); })();
+    })();
+
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', e => {
-            const href = link.getAttribute('href');
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
         });
     });
 
-    // Scroll-on-appear animations
+    // Reveal
     document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries, obs) => {
+        const obs = new IntersectionObserver((entries, o) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    obs.unobserve(entry.target);
-                }
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); o.unobserve(entry.target); }
             });
-        }, { threshold: 0.15 });
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     });
 </script>
 

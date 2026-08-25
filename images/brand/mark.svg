@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#182040"/>
+  <!-- cartographic corner ticks -->
+  <path d="M10 15h6M10 15v6M54 49h-6M54 49v-6" stroke="#a05f3c" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+  <text x="32" y="33" text-anchor="middle" dominant-baseline="central"
+        font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#f7f2e5"
+        letter-spacing="-0.5">CM</text>
+</svg>

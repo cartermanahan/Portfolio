@@ -13,7 +13,7 @@
 <meta name="theme-color" content="#f7f2e5">
 <link rel="icon" href="images/brand/mark.svg">
 <!-- Type is the system stack: New York for display, SF Pro for text. No webfont request. -->
-<link rel="stylesheet" href="styles/site.css?v=40">
+<link rel="stylesheet" href="styles/site.css?v=43">
 <script>
 /* set the theme before first paint so there is never a flash */
 (function(){try{var t=localStorage.getItem('cm-theme');
@@ -58,6 +58,7 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
       <a href="#overview">Overview</a>
       <a href="#cognitif">Cognitif</a>
       <a href="#brandfounder">BrandFounder</a>
+      <a href="#goalsreach">Goalsreach</a>
       <a href="#work">Work</a>
       <a href="#contact" class="nav-cta">Get in touch</a>
     </nav>
@@ -76,8 +77,8 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
     <li><a class="mm-link" href="#overview">Overview</a></li>
     <li><a class="mm-link" href="#cognitif">Cognitif Group</a></li>
     <li><a class="mm-link" href="#brandfounder">BrandFounder</a></li>
+    <li><a class="mm-link" href="#goalsreach">Goalsreach</a></li>
     <li><a class="mm-link" href="#work">Other work</a></li>
-    <li><a class="mm-link" href="#services">What I take on</a></li>
     <li><a class="mm-link" href="#contact">Get in touch</a></li>
   </ul>
   <div class="mm-foot">
@@ -93,6 +94,15 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 <section class="hero" aria-label="Introduction">
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap hero-inner">
+
+    <!-- Portrait crop controls live on .portrait-plate in styles/site.css. -->
+    <div class="hero-portrait" data-slot>
+      <canvas class="portrait-ring" data-bearing="portrait" aria-hidden="true"></canvas>
+      <div class="portrait-plate">
+        <img src="images/profile/c3-2.png?v=1" alt="Carter Manahan" width="1200" height="1364" fetchpriority="high" draggable="false">
+      </div>
+      <span class="slot-label" aria-hidden="true">Image slot<small>images/profile/c3-2.png</small></span>
+    </div>
 
     <div class="hero-copy">
       <p class="hero-kicker" style="--d:.05s">Frontend developer &amp; product designer</p>
@@ -111,15 +121,6 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
       </p>
     </div>
 
-    <!-- Portrait crop controls live on .portrait-plate in styles/site.css. -->
-    <div class="hero-portrait" data-slot>
-      <canvas class="portrait-ring" data-bearing="portrait" aria-hidden="true"></canvas>
-      <div class="portrait-plate">
-        <img src="images/profile/c3-2.png?v=1" alt="Carter Manahan" width="1200" height="1364" fetchpriority="high">
-      </div>
-      <span class="slot-label" aria-hidden="true">Image slot<small>images/profile/c3-2.png</small></span>
-    </div>
-
   </div>
 </section>
 
@@ -130,7 +131,7 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 
       <div class="ov-copy">
         <p class="eyebrow rv">Overview</p>
-        <h2 id="overview-title" class="display-lg rv" style="--d:.06s">Studied it properly, <em>then shipped it.</em></h2>
+        <h2 id="overview-title" class="display-lg rv" style="--d:.06s">From first sketch to <em>live product.</em></h2>
         <p class="lede rv" style="--d:.12s">Product design and frontend engineering, usually on the same product and usually from the first sketch to the live build.</p>
 
         <dl class="ov-facts rv" style="--d:.18s">
@@ -153,22 +154,21 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
         </dl>
       </div>
 
-      <!-- the degree, read off an instrument rather than printed on a certificate -->
-      <figure class="ov-award rv" style="--d:.1s">
-        <div class="ov-dial">
-          <canvas class="ov-ring" data-bearing="award" aria-hidden="true"></canvas>
-          <div class="ov-dial-face">
-            <p class="ov-class"><span>First</span><span>Class</span></p>
-            <p class="ov-honours">Honours</p>
-          </div>
+      <!-- stated, not celebrated: the record as a registry would print it -->
+      <dl class="ov-record rv" style="--d:.1s">
+        <div class="ov-record-row ov-record-row--lead">
+          <dt>Classification</dt>
+          <dd>First Class Honours</dd>
         </div>
-        <figcaption>
-          <dl class="ov-award-spec">
-            <div><dt>Degree</dt><dd>BSc (Hons) Digital Media</dd></div>
-            <div><dt>Awarded by</dt><dd>UWE Bristol</dd></div>
-          </dl>
-        </figcaption>
-      </figure>
+        <div class="ov-record-row">
+          <dt>Degree</dt>
+          <dd>BSc (Hons) Digital Media</dd>
+        </div>
+        <div class="ov-record-row">
+          <dt>Awarded by</dt>
+          <dd>UWE Bristol</dd>
+        </div>
+      </dl>
 
     </div>
   </div>
@@ -187,7 +187,7 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
         <div class="head-scrim" aria-hidden="true"></div>
         <div>
           <p class="eyebrow eyebrow--branded rv">
-            <img class="eyebrow-icon" src="images/logos/cognitif_logo.png" alt="" width="480" height="480">
+            <img class="eyebrow-icon" src="images/logos/cognitif_logo.png" alt="" width="480" height="480" draggable="false">
             <span class="eyebrow-rule" aria-hidden="true"></span>
             <span>Current role &middot; September 2025 to present</span>
           </p>
@@ -223,9 +223,42 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
       </div>
 
       <aside class="case-aside">
-        <figure class="media-plinth media-plinth--slot rv rv--curtain" data-slot>
-          <img src="images/project_heros/cognitif_hero.png" alt="Cognitif product experience" width="1600" height="1000" loading="lazy">
-          <span class="slot-label" aria-hidden="true">Image slot<small>Cognitif experience image</small></span>
+        <figure class="media-plinth cognitif-visual rv rv--curtain">
+          <div class="cognitif-ui" aria-hidden="true">
+            <div class="cognitif-ui__bar">
+              <span class="cognitif-ui__live"><i></i>Live session</span>
+              <span>Participant 04</span>
+            </div>
+            <div class="cognitif-ui__stage">
+              <svg class="cognitif-ui__trace" viewBox="0 0 560 250" role="presentation">
+                <path class="cognitif-ui__guide" d="M20 174C74 174 83 116 137 116s67 82 121 82 73-137 127-137 65 99 155 99"/>
+                <path class="cognitif-ui__signal" pathLength="1" d="M20 174C74 174 83 116 137 116s67 82 121 82 73-137 127-137 65 99 155 99"/>
+                <g class="cognitif-ui__nodes">
+                  <circle cx="20" cy="174" r="4"/>
+                  <circle cx="137" cy="116" r="4"/>
+                  <circle cx="258" cy="198" r="4"/>
+                  <circle cx="385" cy="61" r="5"/>
+                  <circle cx="540" cy="160" r="4"/>
+                </g>
+                <g class="cognitif-ui__focus" transform="translate(385 61)">
+                  <circle r="18"/>
+                  <circle r="31"/>
+                  <path d="M0-43V-35M0 35V43M-43 0H-35M35 0H43"/>
+                </g>
+              </svg>
+              <span class="cognitif-ui__reticle"></span>
+              <div class="cognitif-ui__prompt">
+                <span>Response 02 / 05</span>
+                <strong>Response captured</strong>
+                <small>Processing locally on this device</small>
+              </div>
+            </div>
+            <div class="cognitif-ui__status">
+              <span><i></i>Input active</span>
+              <span>On-device</span>
+            </div>
+          </div>
+          <figcaption class="sr-only">Abstract illustration of a live participant session with a response trace processed on the device.</figcaption>
         </figure>
         <dl class="case-facts rv" style="--d:.08s">
           <div><dt>Role</dt><dd>Frontend Developer</dd></div>
@@ -257,12 +290,12 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
         <div class="head-scrim" aria-hidden="true"></div>
         <div>
           <p class="eyebrow eyebrow--branded rv">
-            <img class="eyebrow-icon" src="images/logos/brandfounder_logo.png" alt="" width="1024" height="1024">
+            <img class="eyebrow-icon" src="images/logos/brandfounder_logo.png" alt="" width="1024" height="1024" draggable="false">
             <span class="eyebrow-rule" aria-hidden="true"></span>
             <span>Founder &middot; Live on the App Store</span>
           </p>
           <h2 id="bf-title" class="rv" style="--d:.06s">Brand<em>Founder</em>.ai</h2>
-          <p class="lede rv" style="--d:.12s">My own company. An AI branding tool for founders who need direction rather than noise. I founded it and built all of it.</p>
+          <p class="lede rv" style="--d:.12s">My own product. An AI branding tool for founders who need direction rather than noise. I founded it and built all of it.</p>
         </div>
       </div>
 
@@ -297,7 +330,7 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 
       <aside class="case-aside">
         <figure class="media-plinth media-plinth--fill rv rv--curtain">
-          <img src="images/project_heros/brandfounder_showcase.png" alt="BrandFounder brand identity artwork" width="2880" height="1608" loading="lazy">
+          <img src="images/project_heros/brandfounder_showcase.png" alt="BrandFounder brand identity artwork" width="2880" height="1608" loading="lazy" draggable="false">
         </figure>
         <dl class="case-facts rv" style="--d:.08s">
           <div><dt>Role</dt><dd>Founder</dd></div>
@@ -319,13 +352,86 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
   </div>
 </section>
 
+<!-- ============================ GOALSREACH ============================ -->
+<section class="section section--tight" id="goalsreach" aria-labelledby="gr-title">
+  <div class="wrap">
+    <article class="case">
+      <div class="sect-index rv"><span class="num">03</span><span class="rule"></span></div>
+
+      <div class="case-head case-head--fx">
+        <canvas class="head-fx head-fx--mark" data-hero-fx="goalsreach" aria-hidden="true"></canvas>
+        <div class="head-scrim" aria-hidden="true"></div>
+        <div>
+          <p class="eyebrow eyebrow--branded rv">
+            <img class="eyebrow-icon" src="images/logos/goalsreach_logo.png" alt="" width="1492" height="1492" draggable="false">
+            <span class="eyebrow-rule" aria-hidden="true"></span>
+            <span>Founder &middot; Live on the App Store</span>
+          </p>
+          <h2 id="gr-title" class="rv" style="--d:.06s">Goals<em>reach</em></h2>
+          <p class="lede rv" style="--d:.12s">A self improvement app built around accountability. Momentum comes from turning up, not from being pushed. I made all of it.</p>
+        </div>
+      </div>
+
+      <div class="case-body">
+      <div class="frows">
+        <div class="frow rv">
+          <span class="frow-num" aria-hidden="true">i.</span>
+          <h3>Accountability, not pressure</h3>
+          <div>
+            <p>Most goal apps punish you for missing a day, and people quit the moment the streak breaks. Goalsreach is built the other way round. It tracks consistency, keeps the record honest, and makes coming back the easy thing to do.</p>
+          </div>
+        </div>
+        <div class="frow rv">
+          <span class="frow-num" aria-hidden="true">ii.</span>
+          <h3>Built end to end in SwiftUI</h3>
+          <div>
+            <p>Native iOS, written in SwiftUI. Every screen, the data model underneath it, and the release. No template, no framework doing the thinking.</p>
+          </div>
+        </div>
+        <div class="frow rv">
+          <span class="frow-num" aria-hidden="true">iii.</span>
+          <h3>Live on iOS, and goalsreach.co.uk</h3>
+          <div>
+            <p>Shipped to the App Store, with the identity and the website designed alongside it. The product and the brand were made by the same person, and it shows in both.</p>
+            <div class="tlink-row">
+              <a class="tlink" href="https://apps.apple.com/ie/app/goalsreach/id6479711415" target="_blank" rel="noopener">App Store<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="tlink" href="https://goalsreach.co.uk" target="_blank" rel="noopener">goalsreach.co.uk<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="case-aside">
+        <figure class="media-plinth media-plinth--fill rv rv--curtain">
+          <img src="images/project_heros/goalsreach_showcase.png" alt="Goalsreach app showcase" width="3870" height="2796" loading="lazy" draggable="false">
+        </figure>
+        <dl class="case-facts rv" style="--d:.08s">
+          <div><dt>Role</dt><dd>Founder</dd></div>
+          <div><dt>Scope</dt><dd>Product design, iOS engineering, brand, website</dd></div>
+          <div><dt>Built with</dt><dd>SwiftUI</dd></div>
+          <div><dt>Live at</dt><dd><a class="link-inline" href="https://goalsreach.co.uk" target="_blank" rel="noopener">goalsreach.co.uk</a></dd></div>
+        </dl>
+      </aside>
+      </div>
+
+      <div class="case-foot rv">
+        <p class="case-stamp"><svg class="ic" aria-hidden="true"><use href="#i-app"/></svg>Founder &middot; Design, iOS, brand</p>
+        <div class="btn-row">
+          <a class="btn" href="https://goalsreach.co.uk" target="_blank" rel="noopener"><span>goalsreach.co.uk</span><span class="arrow" aria-hidden="true">&rarr;</span></a>
+          <a class="btn btn--accent" href="https://apps.apple.com/ie/app/goalsreach/id6479711415" target="_blank" rel="noopener"><span>App Store</span></a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- ============================ OTHER WORK ============================ -->
 <section class="section section--tight" id="work" aria-labelledby="work-title">
   <div class="wrap">
-    <div class="sect-index rv"><span class="num">03</span><span class="rule"></span></div>
+    <div class="sect-index rv"><span class="num">04</span><span class="rule"></span></div>
     <div class="section-head">
       <p class="eyebrow eyebrow--branded rv">
-        <img class="eyebrow-icon eyebrow-icon--mark" src="images/brand/mark.svg" alt="">
+        <img class="eyebrow-icon eyebrow-icon--mark" src="images/brand/mark.svg" alt="" draggable="false">
         <span class="eyebrow-rule" aria-hidden="true"></span>
         <span>Selected work</span>
       </p>
@@ -336,7 +442,7 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
     <div class="pgrid">
 
       <article class="pcard rv">
-        <div class="pcard-media"><img src="images/project_heros/goalsreach_hero.jpg" alt="Goalsreach" width="1200" height="1200" loading="lazy"></div>
+        <div class="pcard-media"><img src="images/project_heros/goalsreach_hero.jpg" alt="Goalsreach" width="1200" height="1200" loading="lazy" draggable="false"></div>
         <div class="pcard-body">
           <p class="pcard-kicker"><svg class="ic" aria-hidden="true"><use href="#i-app"/></svg>Founder &middot; Live on iOS</p>
           <h3>Goalsreach</h3>
@@ -349,7 +455,7 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
       </article>
 
       <article class="pcard rv" style="--d:.06s">
-        <div class="pcard-media"><img src="images/project_heros/bristol_bridge_club_hero.jpg" alt="Bristol Bridge Club" width="1200" height="1200" loading="lazy"></div>
+        <div class="pcard-media"><img src="images/project_heros/bristol_bridge_club_hero.jpg" alt="Bristol Bridge Club" width="1200" height="1200" loading="lazy" draggable="false"></div>
         <div class="pcard-body">
           <p class="pcard-kicker"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>Client &middot; Web</p>
           <h3>Bristol Bridge Club</h3>
@@ -362,7 +468,7 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
       </article>
 
       <article class="pcard rv">
-        <div class="pcard-media"><img src="images/source/matchminded_3d_mockup.png" alt="MatchMinded 3D app mockup" width="2048" height="2048" loading="lazy"></div>
+        <div class="pcard-media"><img src="images/source/matchminded_3d_mockup.png" alt="MatchMinded 3D app mockup" width="2048" height="2048" loading="lazy" draggable="false"></div>
         <div class="pcard-body">
           <p class="pcard-kicker"><svg class="ic" aria-hidden="true"><use href="#i-compass"/></svg>University &middot; Product design</p>
           <h3>MatchMinded</h3>
@@ -374,7 +480,7 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
       </article>
 
       <article class="pcard rv" style="--d:.06s">
-        <div class="pcard-media"><img src="images/project_heros/campus_companion_hero.jpg" alt="Campus Companion" width="1200" height="1200" loading="lazy"></div>
+        <div class="pcard-media"><img src="images/project_heros/campus_companion_hero.jpg" alt="Campus Companion" width="1200" height="1200" loading="lazy" draggable="false"></div>
         <div class="pcard-body">
           <p class="pcard-kicker"><svg class="ic" aria-hidden="true"><use href="#i-compass"/></svg>University &middot; Product design</p>
           <h3>Campus Companion</h3>
@@ -390,6 +496,9 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
 </section>
 
 <!-- ============================ WHAT I TAKE ON ============================ -->
+<!-- Parked for now. Uncomment to bring it back, and restore the #services link
+     to the mobile menu alongside it.
+
 <section class="section section--tight" id="services" aria-labelledby="services-title">
   <div class="wrap">
     <div class="sect-index rv"><span class="num">04</span><span class="rule"></span></div>
@@ -427,6 +536,8 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
     </div>
   </div>
 </section>
+
+-->
 
 <!-- ============================ SKILLS ============================ -->
 <!-- Parked for now. Uncomment to bring the skills matrix back, and restore the
@@ -489,9 +600,9 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
   <div class="wrap">
     <div class="contact-grid">
       <div class="contact-head">
-        <p class="eyebrow rv">Available for work</p>
-        <h2 id="contact-title" class="display-lg rv" style="--d:.06s">Tell me what <em>you're building.</em></h2>
-        <p class="rv" style="--d:.12s">Roles, product work, or a build you need finished properly.</p>
+        <p class="eyebrow rv">Open to opportunities</p>
+        <h2 id="contact-title" class="display-lg rv" style="--d:.06s">Let's talk about <em>the right role.</em></h2>
+        <p class="rv" style="--d:.12s">I'm interested in frontend and product roles where design thinking and hands-on engineering belong in the same job.</p>
         <div class="contact-direct rv" style="--d:.18s">
           <a href="mailto:cartermanahan@gmail.com"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>cartermanahan@gmail.com</a>
           <a href="Resume.pdf" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-file"/></svg>View CV</a>
@@ -511,7 +622,7 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
         </div>
         <div class="field field--full">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="7" placeholder="What you're building, and roughly when you want to move." required></textarea>
+          <textarea id="message" name="message" rows="7" placeholder="Tell me about the role, the team, or why you're getting in touch." required></textarea>
         </div>
         <div class="form-foot">
           <button type="submit" class="btn btn--ink"><span>Send message</span><span class="arrow" aria-hidden="true">&rarr;</span></button>
@@ -542,6 +653,8 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
       <nav class="foot-nav" aria-label="Footer">
         <a href="#cognitif">Cognitif Group</a>
         <a href="#brandfounder">BrandFounder</a>
+        <a href="#goalsreach">Goalsreach</a>
+      <a href="#goalsreach">Goalsreach</a>
         <a href="#work">Work</a>
           <a href="Resume.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
@@ -549,6 +662,6 @@ document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
   </div>
 </footer>
 
-<script src="scripts/site.js?v=25" defer></script>
+    <script src="scripts/site.js?v=36" defer></script>
 </body>
 </html>

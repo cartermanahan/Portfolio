@@ -87,6 +87,10 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 84px; }
 img, svg, video, canvas { display: block; max-width: 100%; height: auto; }
+/* the portrait is cropped by CSS, not in the file, so a native drag
+   would hand over the whole uncropped frame. Nothing here drags. */
+img { -webkit-user-drag: none; -khtml-user-drag: none; user-drag: none; }
+.portrait-plate, .portrait-plate img { -webkit-user-select: none; user-select: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
 a { color: inherit; }
 ul, ol { list-style: none; }
@@ -454,6 +458,10 @@ html.motion-ok .mask-line > span { transform: translateY(112%); animation: line-
   gap: clamp(1.5rem, 4vw, 3.5rem);
   align-items: center;
 }
+/* the portrait sits first in the source so it can float on small
+   screens; on wide ones order puts it back in the right column */
+.hero-copy { order: 1; }
+.hero-portrait { order: 2; }
 .hero h1 { margin: 0 0 1.5rem; line-height: 1.0; white-space: nowrap; }
 .hero .display-xl { font-size: clamp(2rem, 6.1vw, 4.9rem); letter-spacing: -0.028em; }
 .hero-kicker {
@@ -561,7 +569,15 @@ html.motion-ok .hero-portrait {
   .hero-inner { grid-template-columns: 1fr; gap: 2.2rem; }
   /* the same portrait carries the profile card immediately below, so the
      stacked hero stays copy-only rather than spending a screen on it twice */
-  .hero-portrait { display: none; }
+  /* small, level with the name, with the copy running past it */
+  .hero-inner { display: block; }
+  .hero-portrait {
+    float: right; width: clamp(76px, 23vw, 104px); max-width: none;
+    margin: 0.15rem 0 0.9rem 1.1rem;
+  }
+  .portrait-ring { display: none; }
+  .portrait-plate { inset: 0; }
+  .hero-actions, .hero-meta { clear: both; }
   .hero-line { max-width: none; }
 }
 @media (max-width: 560px) {
@@ -600,8 +616,8 @@ html.motion-ok .hero-portrait {
    OVERVIEW — the degree, read off an instrument
    ============================================================ */
 .ov-grid {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.62fr);
-  gap: clamp(2rem, 6vw, 4.5rem); align-items: center;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.56fr);
+  gap: clamp(2rem, 5vw, 4rem); align-items: start;
 }
 .ov-copy .eyebrow { margin-bottom: 1rem; }
 .ov-copy h2 { margin-bottom: 1.1rem; }
@@ -622,49 +638,37 @@ html.motion-ok .hero-portrait {
 .ov-fact dt .ic { width: 14px; height: 14px; }
 .ov-fact dd { font-size: 0.92rem; line-height: 1.5; color: var(--cream-dim); }
 
-/* the dial: the bearing ring from the case heads, with the
-   classification set inside it instead of a mark */
-.ov-award { display: grid; justify-items: center; gap: clamp(1.4rem, 3vw, 2rem); }
-.ov-dial { position: relative; width: 100%; max-width: 340px; aspect-ratio: 1; display: grid; place-items: center; }
-.ov-dial::before {
-  content: ""; position: absolute; z-index: 0; pointer-events: none;
-  left: 50%; top: 50%; width: 150%; aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  background:
-    radial-gradient(circle, rgb(var(--glow-a) / 0.2) 0%, rgb(var(--glow-a) / 0) 55%),
-    radial-gradient(circle at 66% 70%, rgb(var(--glow-b) / 0.15) 0%, rgb(var(--glow-b) / 0) 48%);
+/* the degree stated as a record, the way a registry prints it:
+   label, value, rule. No seal, no laurels, no shouting. */
+.ov-record {
+  align-self: start;
+  border: 1px solid var(--hairline-2); border-radius: 12px;
+  background: var(--panel); overflow: hidden;
 }
-.ov-ring { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; pointer-events: none; }
-.ov-dial-face { position: relative; z-index: 2; text-align: center; }
-.ov-class {
-  display: grid; gap: 0.02em;
-  font-family: var(--serif); font-weight: 400;
-  font-size: clamp(2.4rem, 5.2vw, 3.5rem); line-height: 0.96;
-  letter-spacing: -0.02em; color: var(--cream);
+.ov-record-row {
+  padding: clamp(1rem, 2.2vw, 1.35rem) clamp(1.1rem, 2.4vw, 1.5rem);
+  border-bottom: 1px solid var(--hairline-2);
 }
-.ov-class span:last-child { color: var(--accent-hi); font-style: italic; }
-.ov-honours {
-  margin-top: 0.7rem; padding-top: 0.6rem;
-  border-top: 1px solid var(--hairline-2);
-  font-size: 0.63rem; font-weight: 590; letter-spacing: 0.34em; text-transform: uppercase;
-  color: var(--cream-faint);
-}
-.ov-award-spec {
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.4rem 1.8rem; text-align: center;
-  padding-top: 1.1rem; border-top: 1px solid var(--hairline-2);
-  width: 100%; max-width: 390px;
-}
-.ov-award-spec dt {
+.ov-record-row:last-child { border-bottom: 0; }
+.ov-record dt {
   font-size: 0.58rem; font-weight: 590; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--cream-faint); margin-bottom: 0.2rem;
+  color: var(--cream-faint); margin-bottom: 0.34rem;
 }
-.ov-award-spec dd { font-size: 0.94rem; color: var(--cream-dim); }
+.ov-record dd { font-size: 0.98rem; line-height: 1.45; color: var(--cream-dim); }
+.ov-record-row--lead {
+  background:
+    radial-gradient(120% 180% at 100% 0%, rgb(var(--glow-a) / 0.07), transparent 62%),
+    var(--panel);
+}
+.ov-record-row--lead dt { color: var(--accent); }
+.ov-record-row--lead dd {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.28rem, 2.1vw, 1.6rem); line-height: 1.15;
+  letter-spacing: -0.012em; color: var(--cream);
+}
 
 @media (max-width: 900px) {
-  .ov-grid { grid-template-columns: 1fr; gap: 2.6rem; }
-  .ov-award { order: -1; }
-  .ov-dial { max-width: 290px; }
+  .ov-grid { grid-template-columns: 1fr; gap: 2.2rem; }
 }
 @media (max-width: 520px) {
   .ov-facts { grid-template-columns: 1fr; }
@@ -763,6 +767,106 @@ html.motion-ok .hero-portrait {
 }
 .media-plinth--slot.is-empty .slot-label small {
   font-size: 0.54rem; font-weight: 400; letter-spacing: 0.12em; color: var(--cream-faint);
+}
+
+/* an illustrative participant session, intentionally abstract rather than a
+   reproduction of Cognitif's private production interface */
+.cognitif-visual {
+  aspect-ratio: 16 / 10;
+  padding: clamp(0.65rem, 1.4vw, 0.9rem);
+  background: var(--stage);
+}
+.cognitif-ui {
+  height: 100%; min-height: 0; overflow: hidden;
+  display: grid; grid-template-rows: auto minmax(0, 1fr) auto;
+  border: 1px solid var(--hairline-2); border-radius: 9px;
+  background: var(--panel); color: var(--cream-faint);
+}
+.cognitif-ui__bar,
+.cognitif-ui__status {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.62rem 0.75rem;
+  font-size: clamp(0.43rem, 0.65vw, 0.55rem); font-weight: 600;
+  line-height: 1; letter-spacing: 0.16em; text-transform: uppercase;
+}
+.cognitif-ui__bar { border-bottom: 1px solid var(--hairline-2); }
+.cognitif-ui__status { border-top: 1px solid var(--hairline-2); }
+.cognitif-ui__live,
+.cognitif-ui__status span:first-child { display: inline-flex; align-items: center; gap: 0.42rem; }
+.cognitif-ui__live i,
+.cognitif-ui__status i {
+  width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
+  animation: live-pulse 2.4s var(--ease-soft) infinite;
+}
+.cognitif-ui__stage { position: relative; min-height: 0; overflow: hidden; }
+.cognitif-ui__stage::before,
+.cognitif-ui__stage::after {
+  content: ""; position: absolute; pointer-events: none;
+}
+.cognitif-ui__stage::before {
+  inset: 0;
+  background:
+    linear-gradient(var(--hairline-2) 1px, transparent 1px) 0 0 / 100% 33.333%,
+    linear-gradient(90deg, var(--hairline-2) 1px, transparent 1px) 0 0 / 25% 100%;
+  opacity: 0.44;
+}
+.cognitif-ui__stage::after {
+  width: 1px; inset-block: 0; left: 68.75%;
+  background: rgba(var(--fx-accent), 0.34);
+}
+.cognitif-ui__trace {
+  position: absolute; inset: 7% 2% 8%; width: 96%; height: 85%;
+  overflow: visible;
+}
+.cognitif-ui__guide,
+.cognitif-ui__signal,
+.cognitif-ui__focus circle,
+.cognitif-ui__focus path {
+  fill: none; vector-effect: non-scaling-stroke;
+}
+.cognitif-ui__guide { stroke: rgba(var(--fx-line), 0.28); stroke-width: 1; }
+.cognitif-ui__signal {
+  stroke: rgba(var(--fx-accent), 0.78); stroke-width: 1.45;
+  stroke-dasharray: none; stroke-linecap: round;
+  animation: cognitif-trace 5.6s var(--ease-soft) infinite;
+}
+.cognitif-ui__nodes circle {
+  fill: var(--panel); stroke: rgba(var(--fx-line), 0.48); stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+.cognitif-ui__nodes circle:nth-child(4) { fill: var(--accent); stroke: var(--accent); }
+.cognitif-ui__focus circle { stroke: rgba(var(--fx-accent), 0.42); stroke-width: 1; }
+.cognitif-ui__focus circle + circle { stroke-dasharray: 2 5; }
+.cognitif-ui__focus path { stroke: rgba(var(--fx-accent), 0.58); stroke-width: 1; }
+.cognitif-ui__reticle {
+  position: absolute; z-index: 1; left: 68.75%; top: 24.4%;
+  width: 8px; height: 8px; border: 2px solid var(--panel); border-radius: 50%;
+  background: var(--accent); transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 1px rgba(var(--fx-accent), 0.68);
+}
+.cognitif-ui__reticle::before,
+.cognitif-ui__reticle::after {
+  content: ""; position: absolute; border: 1px solid rgba(var(--fx-accent), 0.34); border-radius: 50%;
+}
+.cognitif-ui__reticle::before { inset: -9px; }
+.cognitif-ui__reticle::after { inset: -17px; border-style: dotted; }
+.cognitif-ui__prompt {
+  position: absolute; left: 0.8rem; bottom: 0.7rem; z-index: 1;
+  display: grid; max-width: 48%;
+}
+.cognitif-ui__prompt span,
+.cognitif-ui__prompt small {
+  font-size: clamp(0.42rem, 0.65vw, 0.54rem); line-height: 1.35;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-faint);
+}
+.cognitif-ui__prompt strong {
+  margin-block: 0.12rem 0.16rem; font-family: var(--serif); font-size: clamp(0.78rem, 1.35vw, 1.05rem);
+  font-weight: 400; line-height: 1.2; color: var(--cream);
+}
+.cognitif-ui__status span:last-child { color: var(--accent-hi); }
+@keyframes cognitif-trace {
+  0%, 100% { opacity: 0.42; }
+  50% { opacity: 1; }
 }
 @media (max-width: 900px) {
   .media-plinth { width: 100%; max-width: 420px; margin-inline: auto; }
